@@ -1,0 +1,123 @@
+---
+title: "Dr. Paul Schmidt"
+output: 
+  html_document:
+    includes:
+      in_header: _header.html
+      after_body: _footer.html
+---
+
+```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+options(knitr.kable.NA = '')
+pacman::p_load(kableExtra, formattable, htmltools, tidyverse)
+```
+
+# About me
+
+<div class = "row"> <div class = "col-md-5">
+
+<!-- Contact symbols -->
+<style>
+p.small {line-height: 1;}
+</style>
+
+<p class="small">
+<i class="fa fa-home" style="color: #002c52;">
+</i> Hamburg, Germany </br>
+
+Contact </br>
+<a href="mailto:schmidtpaul1989@outlook.com">
+<i class="fa fa-envelope" style="color: #002c52;">
+</i> schmidtpaul1989@outlook.com </a> </br>
+<a href="https://github.com/SchmidtPaul/">
+<i class="fa fa-github" style="color: #002c52;">
+</i> GitHub </a> </br>
+<a href="https://www.linkedin.com/in/schmidtpaul1989/">
+<i class="fa fa-linkedin" style="color: #002c52;">
+</i> LinkedIn </a> </br>
+<a href="https://twitter.com/SchmidtPaul1989">
+<i class="fa fa-twitter" style="color: #002c52;">
+</i> Twitter </a> </br>
+<a href="https://www.researchgate.net/profile/Paul_Schmidt17">
+<i class="fa fa-pencil" style="color: #002c52;">
+</i> ResearchGate </a> </br>
+<a href="https://www.xing.com/profile/Paul_Schmidt393/cv">
+<i class="fa fa-xing" style="color: #002c52;">
+</i> Xing </a> 
+
+</div> <div class = "col-md-7">
+
+Websites</br>
+<a href="https://schmidtpaul.github.io/DSFAIR/">
+<img src="https://raw.githubusercontent.com/SchmidtPaul/DSFAIR/master/img/logo/favicon-32x32.png" width=16 height=16/>
+</i> DSFAIR: Data Science for Agriculture in R </a> </br>
+<a href="https://schmidtpaul.github.io/MMFAIR/">
+<img src="https://raw.githubusercontent.com/SchmidtPaul/MMFAIR/master/img/logo/favicon-32x32.png" width=16 height=16/>
+</i> MMFAIR: Mixed Models for Agriculture in R </a> </br>
+<a href="https://schmidtpaul.github.io/crashcouRse/">
+<i class="fa fa-window-maximize" style="color: #002c52;">
+</i> CrashcouRse: R für Bio- und Agrarwissenschaftler </a> </br>
+
+R-packages </br>
+<a href="https://schmidtpaul.github.io/CitaviR/">
+<img src="https://raw.githubusercontent.com/SchmidtPaul/CitaviR/master/docs/favicon-32x32.png" width=16 height=16/>
+</i> CitaviR: A set of tools for dealing with Citavi data </a> </br>
+
+</p>
+
+</div> </div>
+
+<!-- Kurzbeschreibung -->
+<div class = "row"> <div class = "col-md-5">
+I completed my **PhD** in biostatistics at the University of Hohenheim in 2019 and have been working as a **data scientist** in life sciences at [BioMath](https://www.biomath.de/) since then. I also give beginner and advanced **workshops** in R.
+</div> <div class = "col-md-7">
+Ich habe 2019 meine **Promotion** im Fachgebiet Biostatistik an der Universität Hohenheim abgeschlossen und arbeite seitdem als **Data Scientist** in den Life Sciences bei [BioMath](https://www.biomath.de/). Außerdem gebe ich **Workshops** in R für Einsteiger und Fortgeschrittene.
+</div> </div>
+
+# Workshop History
+
+<!-- Workshop Tabelle -->
+```{r workshops, echo=FALSE, warning=FALSE, message=FALSE}
+GerFlagURL <- "https://cdn.countryflags.com/thumbs/germany/flag-round-250.png"
+USAFlagURL <- "https://cdn.countryflags.com/thumbs/united-states-of-america/flag-round-250.png"
+zoomLogoURL <- "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png"
+whiteURL <- "https://www.ict-solutions-events.com/wp-content/uploads/2020/03/plain-white-background-300x200.jpg"
+
+workshops <- read.table(
+  file = "https://raw.githubusercontent.com/SchmidtPaul/CV/master/contactinfo/workshophistory.csv",
+  sep = ";",
+  header = T,
+  encoding = "UTF-8"
+) %>%
+  rename(Time = 1) %>% as_tibble()
+
+LangFlags <- workshops %>% 
+  dplyr::select(Language) %>% 
+  mutate(LangURL = case_when(Language == "Ger" ~ GerFlagURL,
+                             Language == "Eng" ~ USAFlagURL,
+                             T ~ NA_character_)) %>% pull(LangURL)
+
+LocZoom <- workshops %>% 
+  dplyr::select(Location) %>% 
+  mutate(LogoURL = case_when(str_detect(Location, "via") == T ~ zoomLogoURL,
+                             T ~ whiteURL)) %>% pull(LogoURL)
+
+workshops %>%
+  dplyr::select(-URL) %>%
+  kbl(align = c("r", "l", "r", "r", "r"),) %>%
+  kable_minimal(
+    full_width = T,
+    font_size = 10,
+    bootstrap_options = c("hover", "condensed")
+  ) %>%
+  column_spec(1, width = "5em") %>%
+  column_spec(3, width = "5em",
+              image = spec_image(LangFlags, 50, 50)) %>%
+  column_spec(4, width = "20em",
+              image = spec_image(LocZoom, 100, 20)) %>%
+  column_spec(5, width = "5em")
+```
+
+# CV
+
+Find my CV as a pdf file here: [english version](https://github.com/SchmidtPaul/CV/blob/master/CVeng.pdf) or [german version](https://github.com/SchmidtPaul/CV/blob/master/CVger.pdf)

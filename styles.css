@@ -1,0 +1,138 @@
+title {
+  font-size: 30px;
+}
+h1 {
+  font-size: 26px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 22px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+
+/***************************/
+/* Table of contents start */
+
+#TOC::before {
+  content: "";
+  display: block;
+  height: 200px;
+  margin: 10px 0px 10px 0px;
+  background-image: url("img/paulzoomcircle.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    z-index: 2;
+    color: #fff;
+    background-color: #002c52;
+    border-color: #002c52;
+}
+
+/* Table of contents end */
+/*************************/
+
+/**************************************/
+/* Highlighting text with mouse start */
+
+::selection {
+  color: white;
+  background: #002c52; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  color: white;
+  background: #002c52; /* WebKit/Blink Browsers */
+}
+
+/* Highlighting text with mouse end */
+/************************************/
+
+
+/*****************************/
+/* Color Active Dropdown Tab */
+
+ul.dropdown-menu>li.active>a:hover{
+    background: #002c52 !important;
+}
+
+ul.dropdown-menu>li.active>a{
+    background: #002c52 !important;
+}
+/* Color Active Dropdown Tab */
+/*****************************/
+
+
+/********************************************/
+/* Hyperlinks with a target attribute start */
+
+a:link, a:visited {
+   text-decoration: none;
+   line-height: 1;
+   
+   position: relative;
+   z-index: 0;
+   display: inline-block;
+   padding: 3px 0px;
+   overflow: hidden;
+   color: #002c52;
+   vertical-align: bottom;
+   transition: color .3s ease-out;
+}
+
+a:link::before, a:visited::before {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   transform: translateY(calc(100% - 2px));
+   width: 100%;
+   height: 100%;
+   color: #002c52;
+   background-image: linear-gradient(60deg, #1d5a8f 0%, #002c52 100%);
+   transition: transform .25s ease-out;
+}
+
+a:link:hover, a:visited:hover { 
+   color: #fff; 
+}
+
+a:link:hover::before, a:visited:hover::before{
+   transform: translateY(0);
+   transition: transform .25s ease-out;
+}
+
+.credits {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 20px;
+   background-image: linear-gradient(60deg, #1d5a8f 0%, #002c52 100%);
+   text-align: center;
+   font-size: 10px;
+   line-height: 20px;
+   color: white;
+   letter-spacing: 1px;
+}
+
+.credits > a {
+   text-decoration: none;
+   color: #fff;
+   letter-spacing: 1px;
+}
+
+/* Hyperlinks with a target attribute end */
+/******************************************/
