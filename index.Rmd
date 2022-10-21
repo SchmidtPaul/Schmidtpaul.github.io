@@ -1,5 +1,5 @@
 ---
-title: "Dr. Paul Schmidt"
+title: "Dr.Paul Schmidt"
 output: 
   html_document:
     includes:
