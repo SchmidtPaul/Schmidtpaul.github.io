@@ -19,10 +19,6 @@ pacman::p_load(kableExtra, formattable, here, htmltools, readxl, tidyverse)
 
 # About me
 
-<p class="small">
-<i class="fa fa-home" style="color: #00923f;">
-</i> Hamburg, Germany </br>
-
 <div class = "row"> <div class = "col-md-5">
 
 <!-- Contact symbols -->
@@ -48,20 +44,19 @@ Contact </br>
 </i> ResearchGate </a> </br>
 <a href="https://www.xing.com/profile/Paul_Schmidt393/cv">
 <i class="fa fa-xing" style="color: #00923f;">
-</i> Xing </a> 
+</i> Xing </a> </br> 
+<i class="fa fa-home" style="color: #00923f;">
+</i> Hamburg, Germany </br>
 
 </div> <div class = "col-md-7">
 
-Websites</br>
+Website</br>
 <a href="https://schmidtpaul.github.io/dsfair_quarto/">
 <img src="https://github.com/SchmidtPaul/dsfair_quarto/blob/master/img/favicon-32x32.png?raw=true" width=16 height=16/>
 </i> DSFAIR: Data Science for Agriculture in R </a> </br>
-<a href="https://schmidtpaul.github.io/MMFAIR/">
-</i> MMFAIR: Mixed Models for Agriculture in R </a> </br>
-<a href="https://schmidtpaul.github.io/crashcouRse/">
-</i> CrashcouRse: R für Bio- und Agrarwissenschaftler </a> </br>
+<a href="https://schmidtpaul.github.io/MMFAIR/"></a>
 
-R-packages </br>
+R-package</br>
 <a href="https://schmidtpaul.github.io/CitaviR/">
 <img src="https://raw.githubusercontent.com/SchmidtPaul/CitaviR/master/docs/favicon-32x32.png" width=16 height=16/>
 </i> CitaviR: A set of tools for dealing with Citavi data </a> </br>
@@ -81,7 +76,7 @@ Ich habe 2019 meine **Promotion** im Fachgebiet Biostatistik an der Universität
 
 Find my CV as a pdf file here: [english version](https://github.com/SchmidtPaul/CV/blob/master/CVeng.pdf) or [german version](https://github.com/SchmidtPaul/CV/blob/master/CVger.pdf)
 
-# Workshop History
+# Workshops
 
 <!-- Workshop Tabelle -->
 ```{r workshops}
@@ -142,10 +137,5 @@ tbl <- workshops %>%
   column_spec(5, width = "5em")
 
 tbl
-
-
-
-
-# ft_dt$hp <- color_bar("lightgreen")(ft_dt$hp)
 ```
 
