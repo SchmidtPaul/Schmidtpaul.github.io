@@ -13,7 +13,7 @@
 
 <title>Dr.Paul Schmidt</title>
 
-<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
@@ -46,8 +46,15 @@
 <meta name="msapplication-config" content="img/logo/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
 
+
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<!-- Banner -->
+<div id="headerbanner">
+  <img alt="Banner" title="Banner" src="img/Banner/Banner%202560x1344.png" />
+</div>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -111,8 +118,8 @@ pre code {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -120,16 +127,9 @@ pre code {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -254,40 +254,37 @@ div.tocify {
 
 <div id="about-me" class="section level1">
 <h1>About me</h1>
-<div class = "row">
-<div class = "col-md-5">
-
+<p class="small">
+<p><i class="fa fa-home" style="color: #00923f;"> </i> Hamburg, Germany
+</br></p>
+<div class="row">
+<div class="col-md-5">
 <!-- Contact symbols -->
 <style>
 p.small {line-height: 1;}
 </style>
-<p class="small">
-<p><i class="fa fa-home" style="color: #002c52;"> </i> Hamburg, Germany
-</br></p>
 <p>Contact </br> <a href="mailto:schmidtpaul1989@outlook.com">
-<i class="fa fa-envelope" style="color: #002c52;"> </i>
+<i class="fa fa-envelope" style="color: #00923f;"> </i>
 schmidtpaul1989@outlook.com </a> </br>
 <a href="https://github.com/SchmidtPaul/">
-<i class="fa fa-github" style="color: #002c52;"> </i> GitHub </a> </br>
+<i class="fa fa-github" style="color: #00923f;"> </i> GitHub </a> </br>
 <a href="https://www.linkedin.com/in/schmidtpaul1989/">
-<i class="fa fa-linkedin" style="color: #002c52;"> </i> LinkedIn </a>
+<i class="fa fa-linkedin" style="color: #00923f;"> </i> LinkedIn </a>
 </br> <a href="https://twitter.com/SchmidtPaul1989">
-<i class="fa fa-twitter" style="color: #002c52;"> </i> Twitter </a>
+<i class="fa fa-twitter" style="color: #00923f;"> </i> Twitter </a>
 </br> <a href="https://www.researchgate.net/profile/Paul_Schmidt17">
-<i class="fa fa-pencil" style="color: #002c52;"> </i> ResearchGate </a>
+<i class="fa fa-pencil" style="color: #00923f;"> </i> ResearchGate </a>
 </br> <a href="https://www.xing.com/profile/Paul_Schmidt393/cv">
-<i class="fa fa-xing" style="color: #002c52;"> </i> Xing </a></p>
+<i class="fa fa-xing" style="color: #00923f;"> </i> Xing </a></p>
 </div>
 <div class="col-md-7">
-<p>Websites</br> <a href="https://schmidtpaul.github.io/DSFAIR/">
-<img src="https://raw.githubusercontent.com/SchmidtPaul/DSFAIR/master/img/logo/favicon-32x32.png" width=16 height=16/>
+<p>Websites</br> <a href="https://schmidtpaul.github.io/dsfair_quarto/">
+<img src="https://github.com/SchmidtPaul/dsfair_quarto/blob/master/img/favicon-32x32.png?raw=true" width=16 height=16/>
 </i> DSFAIR: Data Science for Agriculture in R </a> </br>
-<a href="https://schmidtpaul.github.io/MMFAIR/">
-<img src="https://raw.githubusercontent.com/SchmidtPaul/MMFAIR/master/img/logo/favicon-32x32.png" width=16 height=16/>
-</i> MMFAIR: Mixed Models for Agriculture in R </a> </br>
-<a href="https://schmidtpaul.github.io/crashcouRse/">
-<i class="fa fa-window-maximize" style="color: #002c52;"> </i>
-CrashcouRse: R für Bio- und Agrarwissenschaftler </a> </br></p>
+<a href="https://schmidtpaul.github.io/MMFAIR/"> </i> MMFAIR: Mixed
+Models for Agriculture in R </a> </br>
+<a href="https://schmidtpaul.github.io/crashcouRse/"> </i> CrashcouRse:
+R für Bio- und Agrarwissenschaftler </a> </br></p>
 <p>R-packages </br> <a href="https://schmidtpaul.github.io/CitaviR/">
 <img src="https://raw.githubusercontent.com/SchmidtPaul/CitaviR/master/docs/favicon-32x32.png" width=16 height=16/>
 </i> CitaviR: A set of tools for dealing with Citavi data </a> </br></p>
@@ -312,6 +309,14 @@ href="https://www.biomath.de/">BioMath</a>. Außerdem gebe ich
 </div>
 </div>
 </div>
+<div id="cv" class="section level1">
+<h1>CV</h1>
+<p>Find my CV as a pdf file here: <a
+href="https://github.com/SchmidtPaul/CV/blob/master/CVeng.pdf">english
+version</a> or <a
+href="https://github.com/SchmidtPaul/CV/blob/master/CVger.pdf">german
+version</a></p>
+</div>
 <div id="workshop-history" class="section level1">
 <h1>Workshop History</h1>
 <!-- Workshop Tabelle -->
@@ -330,7 +335,7 @@ Language
 <th style="text-align:right;">
 Location
 </th>
-<th style="text-align:right;">
+<th style="text-align:left;">
 Duration
 </th>
 </tr>
@@ -338,6 +343,66 @@ Duration
 <tbody>
 <tr>
 <td style="text-align:right;width: 5em; ">
+Jul 2023
+</td>
+<td style="text-align:left;">
+Statistics with R - an Introduction
+</td>
+<td style="text-align:right;width: 5em; ">
+Eng
+<img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-round-250.png" width="16" height="16">
+</td>
+<td style="text-align:right;width: 20em; ">
+Universität Bonn via
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
+</td>
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 50.00%">12h</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 5em; ">
+May 2023
+</td>
+<td style="text-align:left;">
+Statistics with R - an Introduction
+</td>
+<td style="text-align:right;width: 5em; ">
+Eng
+<img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-round-250.png" width="16" height="16">
+</td>
+<td style="text-align:right;width: 20em; ">
+Universität Bonn via
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
+</td>
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 50.00%">12h</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 5em; ">
+Feb 2023
+</td>
+<td style="text-align:left;">
+Introduction to data science for experimental life sciences with R
+</td>
+<td style="text-align:right;width: 5em; ">
+Eng
+<img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-round-250.png" width="16" height="16">
+</td>
+<td style="text-align:right;width: 20em; ">
+Pro-RUWA via
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
+</td>
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 100.00%">24h</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 5em; ">
 Nov 2022
 </td>
 <td style="text-align:left;">
@@ -351,8 +416,9 @@ Eng
 Thünen-Institut, Braunschweig via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-2.5d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 83.33%">20h</span>
 </td>
 </tr>
 <tr>
@@ -360,7 +426,7 @@ Thünen-Institut, Braunschweig via
 Nov 2022
 </td>
 <td style="text-align:left;">
-Data science for experimental life sciences with R (part 2)
+Data Science in den experimentellen Naturwissenschaften mit R (Teil 2)
 </td>
 <td style="text-align:right;width: 5em; ">
 Ger
@@ -370,8 +436,9 @@ Ger
 Thünen-Institut, Braunschweig via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-2.5d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 83.33%">20h</span>
 </td>
 </tr>
 <tr>
@@ -389,8 +456,9 @@ Eng
 Thünen-Institut, Braunschweig via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-2.5d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 83.33%">20h</span>
 </td>
 </tr>
 <tr>
@@ -398,7 +466,7 @@ Thünen-Institut, Braunschweig via
 Nov 2022
 </td>
 <td style="text-align:left;">
-Data science for experimental life sciences with R (part 1)
+Data Science in den experimentellen Naturwissenschaften mit R (Teil 1)
 </td>
 <td style="text-align:right;width: 5em; ">
 Ger
@@ -408,8 +476,9 @@ Ger
 Thünen-Institut, Braunschweig via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-2.5d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 83.33%">20h</span>
 </td>
 </tr>
 <tr>
@@ -427,8 +496,9 @@ Eng
 Universität Bonn via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-2d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 50.00%">12h</span>
 </td>
 </tr>
 <tr>
@@ -446,8 +516,9 @@ Eng
 FBN, Dummerstorf via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-1d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 20.83%">5h</span>
 </td>
 </tr>
 <tr>
@@ -465,8 +536,9 @@ Eng
 Thünen-Institut, Braunschweig via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-3d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 100.00%">24h</span>
 </td>
 </tr>
 <tr>
@@ -474,7 +546,7 @@ Thünen-Institut, Braunschweig via
 Mar 2022
 </td>
 <td style="text-align:left;">
-Data science for experimental life sciences with R (part 2)
+Data Science in den experimentellen Naturwissenschaften mit R (Teil 2)
 </td>
 <td style="text-align:right;width: 5em; ">
 Ger
@@ -484,8 +556,9 @@ Ger
 Thünen-Institut, Braunschweig via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-3d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 100.00%">24h</span>
 </td>
 </tr>
 <tr>
@@ -503,8 +576,9 @@ Eng
 Thünen-Institut, Braunschweig via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-3d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 100.00%">24h</span>
 </td>
 </tr>
 <tr>
@@ -512,7 +586,7 @@ Thünen-Institut, Braunschweig via
 Mar 2022
 </td>
 <td style="text-align:left;">
-Data science for experimental life sciences with R (part 1)
+Data Science in den experimentellen Naturwissenschaften mit R (Teil 1)
 </td>
 <td style="text-align:right;width: 5em; ">
 Ger
@@ -522,8 +596,9 @@ Ger
 Thünen-Institut, Braunschweig via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-3d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 100.00%">24h</span>
 </td>
 </tr>
 <tr>
@@ -541,8 +616,9 @@ Eng
 Universität Kassel
 <img src="https://www.ict-solutions-events.com/wp-content/uploads/2020/03/plain-white-background-300x200.jpg" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-4d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 100.00%">24h</span>
 </td>
 </tr>
 <tr>
@@ -550,7 +626,7 @@ Universität Kassel
 Jul 2021
 </td>
 <td style="text-align:left;">
-Data science for life sciences with R (part 2)
+Data science in den Naturwissenschaften mit R (Teil 2)
 </td>
 <td style="text-align:right;width: 5em; ">
 Ger
@@ -560,8 +636,9 @@ Ger
 Thünen-Institut, Braunschweig via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-3d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 100.00%">24h</span>
 </td>
 </tr>
 <tr>
@@ -569,7 +646,7 @@ Thünen-Institut, Braunschweig via
 May 2021
 </td>
 <td style="text-align:left;">
-Data science for life sciences with R (part 1)
+Data science in den Naturwissenschaften mit R (Teil 1)
 </td>
 <td style="text-align:right;width: 5em; ">
 Ger
@@ -579,8 +656,9 @@ Ger
 Thünen-Institut, Braunschweig via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-3d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 100.00%">24h</span>
 </td>
 </tr>
 <tr>
@@ -588,7 +666,7 @@ Thünen-Institut, Braunschweig via
 Mar 2021
 </td>
 <td style="text-align:left;">
-Data science for life sciences with R (part 2)
+Data science in den Naturwissenschaften mit R (Teil 2)
 </td>
 <td style="text-align:right;width: 5em; ">
 Ger
@@ -598,8 +676,9 @@ Ger
 Thünen-Institut, Braunschweig via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-3d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 100.00%">24h</span>
 </td>
 </tr>
 <tr>
@@ -618,8 +697,9 @@ Eng
 Universität Kassel via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-2d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 66.67%">16h</span>
 </td>
 </tr>
 <tr>
@@ -627,7 +707,7 @@ Universität Kassel via
 Nov 2020
 </td>
 <td style="text-align:left;">
-Data science for life sciences with R (part 1)
+Data science in den Naturwissenschaften mit R (Teil 1)
 </td>
 <td style="text-align:right;width: 5em; ">
 Ger
@@ -637,8 +717,9 @@ Ger
 Thünen-Institut, Braunschweig via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-3d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 100.00%">24h</span>
 </td>
 </tr>
 <tr>
@@ -656,8 +737,9 @@ Eng
 CIHEAM Zaragoza via
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-5d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 41.67%">10h</span>
 </td>
 </tr>
 <tr>
@@ -675,8 +757,9 @@ Eng
 Universität Kassel
 <img src="https://www.ict-solutions-events.com/wp-content/uploads/2020/03/plain-white-background-300x200.jpg" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-2d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 66.67%">16h</span>
 </td>
 </tr>
 <tr>
@@ -694,8 +777,9 @@ Ger
 Universität Rostock
 <img src="https://www.ict-solutions-events.com/wp-content/uploads/2020/03/plain-white-background-300x200.jpg" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-2d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 66.67%">16h</span>
 </td>
 </tr>
 <tr>
@@ -713,8 +797,9 @@ Ger
 Thünen-Institut, Braunschweig
 <img src="https://www.ict-solutions-events.com/wp-content/uploads/2020/03/plain-white-background-300x200.jpg" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-3d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 100.00%">24h</span>
 </td>
 </tr>
 <tr>
@@ -732,8 +817,9 @@ Ger
 Thünen-Institut, Braunschweig
 <img src="https://www.ict-solutions-events.com/wp-content/uploads/2020/03/plain-white-background-300x200.jpg" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-3d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 100.00%">24h</span>
 </td>
 </tr>
 <tr>
@@ -751,8 +837,9 @@ Ger
 Universität Rostock
 <img src="https://www.ict-solutions-events.com/wp-content/uploads/2020/03/plain-white-background-300x200.jpg" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-2d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 66.67%">16h</span>
 </td>
 </tr>
 <tr>
@@ -760,7 +847,7 @@ Universität Rostock
 Nov 2018
 </td>
 <td style="text-align:left;">
-Mixed models with R
+Gemischte Modelle in R
 </td>
 <td style="text-align:right;width: 5em; ">
 Ger
@@ -770,8 +857,9 @@ Ger
 Thünen-Institut, Braunschweig
 <img src="https://www.ict-solutions-events.com/wp-content/uploads/2020/03/plain-white-background-300x200.jpg" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-3d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 100.00%">24h</span>
 </td>
 </tr>
 <tr>
@@ -789,8 +877,9 @@ Eng
 Bangladesh Rice Res. Inst., Gazipur
 <img src="https://www.ict-solutions-events.com/wp-content/uploads/2020/03/plain-white-background-300x200.jpg" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-1d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 16.67%">4h</span>
 </td>
 </tr>
 <tr>
@@ -808,8 +897,9 @@ Eng
 Universität Hohenheim, Stuttgart
 <img src="https://www.ict-solutions-events.com/wp-content/uploads/2020/03/plain-white-background-300x200.jpg" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-3d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 75.00%">18h</span>
 </td>
 </tr>
 <tr>
@@ -827,26 +917,22 @@ Eng
 Universität Hohenheim, Stuttgart
 <img src="https://www.ict-solutions-events.com/wp-content/uploads/2020/03/plain-white-background-300x200.jpg" width="32" height="6.4">
 </td>
-<td style="text-align:right;width: 5em; ">
-3d
+<td style="text-align:left;width: 5em; ">
+<span
+style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: lightgrey; width: 75.00%">18h</span>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="cv" class="section level1">
-<h1>CV</h1>
-<p>Find my CV as a pdf file here: <a
-href="https://github.com/SchmidtPaul/CV/blob/master/CVeng.pdf">english
-version</a> or <a
-href="https://github.com/SchmidtPaul/CV/blob/master/CVger.pdf">german
-version</a></p>
+
+<div dir="auto" align="center">
+  <br>
+  <a href="https://www.buymeacoffee.com/schmidtpaul" target="_blank" rel="nofollow"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px; width: 180px; max-width: 100%;" data-canonical-src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg"></a>
+  <br><br>
 </div>
 
-&nbsp;
-<hr />
-<p style="text-align: center;">Please feel free to contact me! </p>
-<p style="text-align: center;"><span style="color: #002c52;"><em>schmidtpaul1989@outlook.com</em></span></p>
+  
 
 
 </div>

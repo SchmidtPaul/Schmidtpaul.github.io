@@ -36,9 +36,9 @@ h6 {
 
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
     z-index: 2;
-    color: #fff;
-    background-color: #002c52;
-    border-color: #002c52;
+    color: #f8f9fa;
+    background-color: #00923f;
+    border-color: #00923f;
 }
 
 /* Table of contents end */
@@ -48,91 +48,64 @@ h6 {
 /* Highlighting text with mouse start */
 
 ::selection {
-  color: white;
-  background: #002c52; /* WebKit/Blink Browsers */
-}
-::-moz-selection {
-  color: white;
-  background: #002c52; /* WebKit/Blink Browsers */
+  color: #f8f9fa;
+  background: #00923f;
 }
 
 /* Highlighting text with mouse end */
 /************************************/
 
-
-/*****************************/
-/* Color Active Dropdown Tab */
-
-ul.dropdown-menu>li.active>a:hover{
-    background: #002c52 !important;
+#footer{
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-ul.dropdown-menu>li.active>a{
-    background: #002c52 !important;
-}
-/* Color Active Dropdown Tab */
-/*****************************/
-
-
-/********************************************/
-/* Hyperlinks with a target attribute start */
-
-a:link, a:visited {
-   text-decoration: none;
-   line-height: 1;
-   
-   position: relative;
-   z-index: 0;
-   display: inline-block;
-   padding: 3px 0px;
-   overflow: hidden;
-   color: #002c52;
-   vertical-align: bottom;
-   transition: color .3s ease-out;
+ /* unvisited link */
+a:link {
+  color: #00923f;
 }
 
-a:link::before, a:visited::before {
-   content: "";
-   position: absolute;
-   z-index: -1;
-   top: 0;
-   left: 0;
-   transform: translateY(calc(100% - 2px));
-   width: 100%;
-   height: 100%;
-   color: #002c52;
-   background-image: linear-gradient(60deg, #1d5a8f 0%, #002c52 100%);
-   transition: transform .25s ease-out;
+/* visited link */
+a:visited {
+  color: #00923f;
 }
 
-a:link:hover, a:visited:hover { 
-   color: #fff; 
+/* mouse over link */
+a:hover {
+  color: #00923f;
 }
 
-a:link:hover::before, a:visited:hover::before{
-   transform: translateY(0);
-   transition: transform .25s ease-out;
+/* selected link */
+a:active {
+  color: #00923f;
+} 
+
+#bannerimage {
+  /* width: 100%; */
+  /* max-width: 100%; */
+  object-fit: cover;
+  background-image: url("img/Banner/Banner 2560x1344.png");
+  height: 300px;
+  background-color: #00923f;
+  background-position: center;
 }
 
-.credits {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100vw;
-   height: 20px;
-   background-image: linear-gradient(60deg, #1d5a8f 0%, #002c52 100%);
-   text-align: center;
-   font-size: 10px;
-   line-height: 20px;
-   color: white;
-   letter-spacing: 1px;
+#headerbanner
+{
+  height: 300px;
+  width: 100%;
 }
 
-.credits > a {
-   text-decoration: none;
-   color: #fff;
-   letter-spacing: 1px;
+#headerbanner img
+{
+  width: 100%;
+  min-width: 600px;
+  max-width: 1920px;
+  max-height: 100%;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-/* Hyperlinks with a target attribute end */
-/******************************************/
