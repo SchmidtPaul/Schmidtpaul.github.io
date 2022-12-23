@@ -68,13 +68,16 @@ R-package</br>
 <!-- Kurzbeschreibung -->
 <div class = "row"> <div class = "col-md-5">
 I completed my **PhD** in biostatistics at the University of Hohenheim in 2019 and have been working as a **data scientist** in life sciences at [BioMath](https://www.biomath.de/) since then. I also give beginner and advanced **workshops** in R.
+
+<p align="center"><a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CV/CVeng.pdf" target="_blank" rel="noopener noreferrer">&#128195;Curriculum Vitae (CV)</a></p>
+
 </div> <div class = "col-md-7">
+
 Ich habe 2019 meine **Promotion** im Fachgebiet Biostatistik an der Universität Hohenheim abgeschlossen und arbeite seitdem als **Data Scientist** in den Life Sciences bei [BioMath](https://www.biomath.de/). Außerdem gebe ich **Workshops** in R für Einsteiger und Fortgeschrittene.
-</div> </div>
 
-# CV
+<p align="center"><a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CV/CVger.pdf" target="_blank" rel="noopener noreferrer">&#128195;Lebenslauf</a></p>
 
-Find my CV as a pdf file here: [english version](https://github.com/SchmidtPaul/CV/blob/master/CVeng.pdf) or [german version](https://github.com/SchmidtPaul/CV/blob/master/CVger.pdf)
+</div>
 
 # Workshops
 

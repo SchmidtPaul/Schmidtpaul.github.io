@@ -1,0 +1,486 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+%
+% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 23 November 2018
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt,a4paper,]{awesome-cv}
+
+% Configure page margins with geometry
+\usepackage{geometry}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+
+\definecolor{awesome}{HTML}{414141}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+\def\endfirstpage{\newpage}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+
+\photo{paulzoomcircle.png}
+\name{Dr.}{Paul Schmidt}
+
+\position{Data Scientist / Biostatistician}
+\address{Hamburg, Germany}
+
+\mobile{+49 172 3091577}
+\email{\href{mailto:schmidtpaul1989@outlook.com}{\nolinkurl{schmidtpaul1989@outlook.com}}}
+\researchgate{Paul\_Schmidt17}
+\github{SchmidtPaul}
+\linkedin{schmidtpaul1989}
+
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \skype{skype-id}
+% \reddit{reddit-id}
+
+
+\usepackage{booktabs}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%------------------------------------------------------------------------------
+
+
+
+% Pandoc CSL macros
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{2em}
+\newenvironment{CSLReferences}[3] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\honortitlestyle{#1}}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\honordatestyle{#1}}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+% 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
+\makecvfooter
+  {12/2022}
+    {Dr. Paul Schmidt~~~·~~~Curriculum Vitae}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%------------------------------------------------------------------------------
+
+
+
+\makecvfooter{Dezember, 2022}{Dr. Paul Schmidt~~~·~~~Curriculum Vitae}{\thepage}
+
+\hypertarget{professional-experience}{%
+\section{Professional experience}\label{professional-experience}}
+
+\begin{cventries}
+    \cventry{Data scientist / General Manager}{BioMath - Applied Statistics and Informatics in Life Sciences}{Rostock \& Hamburg, Germany}{Since Jan 2019}{\begin{cvitems}
+\item Various statistical analyses from raw data to final report for e.g. yearly post-market monitoring (survey; agriculture), risk assessment (meta-analysis; epidemiology), a long-term field trial (experiment; environment), geographic distribution (geospatial; administrative office)
+\item Implement new / streamline existing SOPs (for e.g. systematic literature reviews and meta-analyses) by making better use of in-depth functionality of established software and additionally via introducing complementing software/tools
+\item Supervise project communication and time management
+\item Conduct in-depth research,  write scientific reports and proofread especially English tender application, report and publication drafts
+\item General manager since September 2022
+\end{cvitems}}
+    \cventry{Workshop teacher}{Freelancer (part-time)}{see `Workshops' section below}{Since Nov 2018}{\begin{cvitems}
+\item Develop and teach workshops on statistics in R; specific content and language according to the contractor
+\item Provide corresponding material on my websites (see 'Other skills' section below)
+\end{cvitems}}
+    \cventry{Research associate}{University of Hohenheim}{Stuttgart, Germany}{Sep 2015 - Dec 2018}{\begin{cvitems}
+\item Personalized consulting (ranging from single-appointment to project-accompanying) for students and research associates in terms of experimental design, data handling, statistical analyses and/or presentation of results
+\item Develop, conduct and manage yearly statistical analysis of yield stability data for external company
+\item Develop, organize and teach workshops in statistics, R and SAS
+\item Supervise student writing his MSc thesis
+\end{cvitems}}
+    \cventry{Junior Data scientist}{BioMath - Applied Statistics and Informatics in Life Sciences}{Rostock, Germany}{Jan 2015 - Aug 2015}{\begin{cvitems}
+\item Streamline statistical analyses of monitoring data
+\item Implement SOP for systematic literature reviews
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{education}{%
+\section{Education}\label{education}}
+
+\begin{cventries}
+    \cventry{Dr. sc. agr.}{University of Hohenheim}{Stuttgart, Germany}{Sep 2015 - Nov 2019}{\begin{cvitems}
+\item DFG-funded PhD student in the biostatistics unit of Prof. Dr. Hans-Peter Piepho
+\item Cumulative doctoral thesis: 'Estimating heritability in plant breeding programs' graded 'magna cum laude'
+\end{cvitems}}
+    \cventry{Visiting PhD student}{Purdue University}{West Lafayette, IN, USA}{Sep 2015 - Dec 2015}{\begin{cvitems}
+\item Visiting PhD student in the statistical bioinformatics unit of Prof. Dr. Rebecca Whitbeck Doerge
+\item Arranged on personal initiative, this collaboration allowed for scientific exchange and inspiration at the beginning of my PhD
+\end{cvitems}}
+    \cventry{MSc Crop Science: Plant Breeding}{University of Hohenheim}{Stuttgart, Germany}{Oct 2012 - Dec 2014}{\begin{cvitems}
+\item Specialization in biostatistics and plant breeding (final grade 1.4)
+\item MSc Thesis: 'Statistical Evaluation and Analysis of PACTS trials as a series of on-farm strip trials without replicates' graded 1.0
+\end{cvitems}}
+    \cventry{BSc Agribiology (in german)}{University of Hohenheim}{Stuttgart, Germany}{Oct 2009 - Sep 2012}{\begin{cvitems}
+\item Specialization in plant sciences and genetics (final grade 1.9)
+\item BSc Thesis: 'Cumulative effects of glyphosate trace concentrations during root exposition of winter wheat' graded 1.0
+\end{cvitems}}
+    \cventry{Student exchange year}{Alexander Central High School}{Taylorsville, NC, USA}{Aug 2006 - Jul 2007}{\begin{cvitems}
+\item Completed senior year and obtained high school diploma
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{skills}{%
+\section{Skills}\label{skills}}
+
+\begin{cvskills} 
+\cvskill {General} 
+{collaboration, communication, structuring, time management, strategic oversight, problem solving } 
+
+\cvskill {Languages} 
+{German (native), English (effective operational proficiency) } 
+
+\cvskill {Open Source} 
+{Website https://schmidtpaul.github.io/dsfair\_quarto/, R package CitaviR https://schmidtpaul.github.io/CitaviR/. } 
+
+\cvskill {Presentation} 
+{data visualization, data analysis reports, scientific publications, presentations } 
+
+\cvskill {Software} 
+{R, Python, SAS, SPSS, MS Office, Adoce Acrobat Pro, Latex, C\#, SQL } 
+
+\cvskill {Statistics} 
+{(generalized) linear (mixed) models, exploratory \& descriptive data analysis, experimental design } 
+\end{cvskills}
+
+\hypertarget{workshops}{%
+\section{Workshops}\label{workshops}}
+
+\begin{cvhonors} 
+\cvhonor
+{Statistics with R - an Introduction  }
+{Universität Bonn via zoom}
+{12h}
+{Jul 2023  }
+
+\cvhonor
+{Statistics with R - an Introduction  }
+{Universität Bonn via zoom}
+{12h}
+{May 2023  }
+
+\cvhonor
+{Introduction to data science for exp. life sciences with R  }
+{Pro-RUWA via zoom}
+{24h}
+{Feb 2023  }
+
+\cvhonor
+{Data science for exp. life sciences with R (part 2)  }
+{Thünen-Institut, Braunschweig via zoom}
+{20h}
+{Nov 2022  }
+
+\cvhonor
+{Data Science in den exp.en Naturwiss. mit R (Teil 2)  }
+{Thünen-Institut, Braunschweig via zoom}
+{20h}
+{Nov 2022  }
+
+\cvhonor
+{Data science for exp. life sciences with R (part 1)  }
+{Thünen-Institut, Braunschweig via zoom}
+{20h}
+{Nov 2022  }
+
+\cvhonor
+{Data Science in den exp.en Naturwiss. mit R (Teil 1)  }
+{Thünen-Institut, Braunschweig via zoom}
+{20h}
+{Nov 2022  }
+
+\cvhonor
+{Statistics with R - an Introduction  }
+{Universität Bonn via zoom}
+{12h}
+{Nov 2022  }
+
+\cvhonor
+{R and the {Tidyverse}  }
+{FBN, Dummerstorf via zoom}
+{5h}
+{Oct 2022  }
+
+\cvhonor
+{Data science for exp. life sciences with R (part 2)  }
+{Thünen-Institut, Braunschweig via zoom}
+{24h}
+{Mar 2022  }
+
+\cvhonor
+{Data Science in den exp.en Naturwiss. mit R (Teil 2)  }
+{Thünen-Institut, Braunschweig via zoom}
+{24h}
+{Mar 2022  }
+
+\cvhonor
+{Data science for exp. life sciences with R (part 1)  }
+{Thünen-Institut, Braunschweig via zoom}
+{24h}
+{Mar 2022  }
+
+\cvhonor
+{Data Science in den exp.en Naturwiss. mit R (Teil 1)  }
+{Thünen-Institut, Braunschweig via zoom}
+{24h}
+{Mar 2022  }
+
+\cvhonor
+{Statistics with R (Beginner)  }
+{Universität Kassel}
+{24h}
+{Dec 2021  }
+
+\cvhonor
+{Data science in den Naturwiss. mit R (Teil 2)  }
+{Thünen-Institut, Braunschweig via zoom}
+{24h}
+{Jul 2021  }
+
+\cvhonor
+{Data science in den Naturwiss. mit R (Teil 1)  }
+{Thünen-Institut, Braunschweig via zoom}
+{24h}
+{May 2021  }
+
+\cvhonor
+{Data science in den Naturwiss. mit R (Teil 2)  }
+{Thünen-Institut, Braunschweig via zoom}
+{24h}
+{Mar 2021  }
+
+\cvhonor
+{Planning exp. designs, repeated measurements, and their analyses in R  }
+{Universität Kassel via zoom}
+{16h}
+{Nov 2020  }
+
+\cvhonor
+{Data science in den Naturwiss. mit R (Teil 1)  }
+{Thünen-Institut, Braunschweig via zoom}
+{24h}
+{Nov 2020  }
+
+\cvhonor
+{Experimental Design - Practicals in R  }
+{CIHEAM Zaragoza via zoom}
+{10h}
+{Oct 2020  }
+
+\cvhonor
+{Real‑time consultation on statistics and mixed models in R  }
+{Universität Kassel}
+{16h}
+{Mar 2020  }
+
+\cvhonor
+{Basics of applied statistics  }
+{Universität Rostock}
+{16h}
+{Dec 2019  }
+
+\cvhonor
+{Data science for life sciences with R (part 2)  }
+{Thünen-Institut, Braunschweig}
+{24h}
+{Nov 2019  }
+
+\cvhonor
+{Data science for life sciences with R (part 1)  }
+{Thünen-Institut, Braunschweig}
+{24h}
+{Oct 2019  }
+
+\cvhonor
+{Essential basics of statistics  }
+{Universität Rostock}
+{16h}
+{Sep 2019  }
+
+\cvhonor
+{Gemischte Modelle in R  }
+{Thünen-Institut, Braunschweig}
+{24h}
+{Nov 2018  }
+
+\cvhonor
+{Implementation of yield stability assessment with ASReml‑R  }
+{Bangladesh Rice Res. Inst., Gazipur}
+{4h}
+{May 2018  }
+
+\cvhonor
+{Statistical analysis with SAS (monthly)  }
+{Universität Hohenheim, Stuttgart}
+{18h}
+{2016‑2018  }
+
+\cvhonor
+{Statistical analysis with R (monthly)  }
+{Universität Hohenheim, Stuttgart}
+{18h}
+{2016‑2018  }\end{cvhonors}
+
+\hypertarget{scientific-publications}{%
+\section{Scientific publications}\label{scientific-publications}}
+
+\footnotesize
+
+\hypertarget{bibliography}{}
+\leavevmode\vadjust pre{\hypertarget{ref-Friedrichs.2021}{}}%
+\CSLLeftMargin{1. }%
+\CSLRightInline{Friedrichs, P., Schmidt, P., \& Schmidt, K. (2021).
+\emph{Protanopie und protanomalie bei berufskraftfahrern und
+berufskraftfahrerinnen - prävalenz und unfallrisiko: = protanopia and
+protanomaly among professional drivers: Prevalence and accident risk:
+Vols. Heft 319}.
+\url{https://bast.opus.hbz-nrw.de/frontdoor/index/index/searchtype/series/id/5/start/1/rows/25/docId/2574}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Schmidt.2021}{}}%
+\CSLLeftMargin{2. }%
+\CSLRightInline{Schmidt, K., Friedrichs, P., Cornelsen, H. C., Schmidt,
+P., \& Tischer, T. (2021). \emph{Musculoskeletal disorders among
+children and young people: Prevalence, risk factors, preventive
+measures: A scoping review}. \url{https://doi.org/10.2802/511243}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Buntaran.2020}{}}%
+\CSLLeftMargin{3. }%
+\CSLRightInline{Buntaran, H., Piepho, H.-P., Schmidt, P., Rydén, J.,
+Halling, M., \& Forkman, J. (2020). Cross--validation of stagewise
+mixed--model analysis of swedish variety trials with winter wheat and
+spring barley. \emph{Crop Science}, \emph{60}(5), 2221--2240.
+\url{https://doi.org/10.1002/csc2.20177}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Kukowski.2020}{}}%
+\CSLLeftMargin{4. }%
+\CSLRightInline{Kukowski, S., Schmidt, P., Piepho, H.-P., Röhl, M.,
+Hauffe, H.-K., \& Streck, T. (2020). Auswirkungen atmosphärischer
+stickstoffeinträge auf magere flachland-mähwiesen in baden-württemberg.
+\emph{Natur Und Landschaft}, \emph{95}(2), 58--67.
+\url{https://doi.org/10.17433/2.2020.50153773.58-67}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Schmidt.2019}{}}%
+\CSLLeftMargin{5. }%
+\CSLRightInline{Schmidt, P. (2019). \emph{Estimating heritability in
+plant breeding programs}.
+\url{http://opus.uni-hohenheim.de/volltexte/2020/1720/}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Schmidt.2019b}{}}%
+\CSLLeftMargin{6. }%
+\CSLRightInline{Schmidt, P., Hartung, J., Bennewitz, J., \& Piepho,
+H.-P. (2019). Heritability in plant breeding on a genotype-difference
+basis. \emph{Genetics}, \emph{212}(4), 991--1008.
+\url{https://doi.org/10.1534/genetics.119.302134}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Schmidt.2019c}{}}%
+\CSLLeftMargin{7. }%
+\CSLRightInline{Schmidt, P., Hartung, J., Rath, J., \& Piepho, H.-P.
+(2019). Estimating broad-sense heritability with unbalanced data from
+agricultural cultivar trials. \emph{Crop Science}, \emph{59}(2),
+525--536. \url{https://doi.org/10.2135/cropsci2018.06.0376}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Schmidt.2018}{}}%
+\CSLLeftMargin{8. }%
+\CSLRightInline{Schmidt, P., Möhring, J., Koch, R. J., \& Piepho, H.-P.
+(2018). More, larger, simpler: How comparable are on-farm and on-station
+trials for cultivar evaluation? \emph{Crop Science}, \emph{58}(4),
+1508--1518. \url{https://doi.org/10.2135/cropsci2017.09.0555}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Tulinska.2018}{}}%
+\CSLLeftMargin{9. }%
+\CSLRightInline{Tulinská, J., Adel-Patient, K., Bernard, H., Líšková,
+A., Kuricová, M., Ilavská, S., Horváthová, M., Kebis, A., Rollerová, E.,
+Babincová, J., Aláčová, R., Wal, J.-M., Schmidt, K., Schmidtke, J.,
+Schmidt, P., Kohl, C., Wilhelm, R., Schiemann, J., \& Steinberg, P.
+(2018). Humoral and cellular immune response in wistar han RCC rats fed
+two genetically modified maize MON810 varieties for 90 days (EU 7th
+framework programme project GRACE). \emph{Archives of Toxicology},
+\emph{92}(7), 2385--2399.
+\url{https://doi.org/10.1007/s00204-018-2230-z}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Schmidt.2017}{}}%
+\CSLLeftMargin{10. }%
+\CSLRightInline{Schmidt, K., Schmidtke, J., Schmidt, P., Kohl, C.,
+Wilhelm, R., Schiemann, J., van der Voet, H., \& Steinberg, P. (2017).
+Variability of control data and relevance of observed group differences
+in five oral toxicity studies with genetically modified maize MON810 in
+rats. \emph{Archives of Toxicology}, \emph{91}(4), 1977--2006.
+\url{https://doi.org/10.1007/s00204-016-1857-x}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Zeljenkova.2016}{}}%
+\CSLLeftMargin{11. }%
+\CSLRightInline{Zeljenková, D., Aláčová, R., Ondrejková, J., Ambrušová,
+K., Bartušová, M., Kebis, A., Kovrižnych, J., Rollerová, E., Szabová,
+E., Wimmerová, S., Černák, M., Krivošíková, Z., Kuricová, M., Líšková,
+A., Spustová, V., Tulinská, J., Levkut, M., Révajová, V., Ševčíková, Z.,
+\ldots{} Steinberg, P. (2016). One-year oral toxicity study on a
+genetically modified maize MON810 variety in wistar han RCC rats (EU 7th
+framework programme project GRACE). \emph{Archives of Toxicology},
+\emph{90}(10), 2531--2562.
+\url{https://doi.org/10.1007/s00204-016-1798-4}}
+
+
+
+\end{document}
