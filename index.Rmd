@@ -1,5 +1,5 @@
 ---
-title: "Dr.Paul Schmidt"
+title: "Dr. Paul Schmidt"
 image: /img/Banner/Banner 2560x1344.png
 output: 
   html_document:

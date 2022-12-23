@@ -1,0 +1,65 @@
+---
+name: Dr.
+surname: Paul Schmidt
+profilepic: paulzoomcircle.png
+date: "`r format(Sys.time(), '%m/%Y')`"
+qualifications: Dr. sci. agr.
+position: Data Scientist / Biostatistician
+address: Hamburg, Germany
+phone: +49 172 3091577
+email: schmidtpaul1989@outlook.com
+linkedin: schmidtpaul1989
+researchgate: Paul_Schmidt17
+github: SchmidtPaul
+headcolor: 414141
+output: 
+  vitae::awesomecv:
+    keep_tex: true
+---
+
+```{r}
+#| include: false
+source(here::here("CV", "CVhelper.R"))
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      error = FALSE)
+```
+
+<!-- Overwrite the default footer to have 1/n page numbering: -->
+\makecvfooter{`r format(Sys.time(), '%B, %Y')`}{Dr. Paul Schmidt~~~·~~~Curriculum Vitae}{\thepage}
+
+# Professional experience
+
+```{r}
+d$job$eng %>% detailed_entries(role, dates, company, loc, details)
+```
+
+# Education
+
+```{r}
+d$edu$eng %>% detailed_entries(degree, dates, uni, loc, details)
+```
+
+# Skills
+
+```{r, results = "asis"}
+cat("\\begin{cvskills} \n")
+cat(d$ski$eng)
+cat("\\end{cvskills} \n")
+```
+
+# Workshops
+
+```{r, results = "asis"}
+cat("\\begin{cvhonors} \n")
+cat(d$workshops)
+cat("\\end{cvhonors} \n")
+```
+
+# Scientific publications
+
+\footnotesize
+
+```{r}
+d$pub
+```
