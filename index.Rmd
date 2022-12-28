@@ -17,8 +17,6 @@ options(knitr.kable.NA = '')
 pacman::p_load(kableExtra, formattable, here, htmltools, readxl, tidyverse)
 ```
 
-# About me
-
 <div class = "row"> <div class = "col-md-5">
 
 <!-- Contact symbols -->
@@ -67,19 +65,17 @@ R-package</br>
 
 <!-- Kurzbeschreibung -->
 <div class = "row"> <div class = "col-md-5">
-I completed my **PhD** in biostatistics at the University of Hohenheim in 2019 and have been working as a **data scientist** in life sciences at [BioMath](https://www.biomath.de/) since then. I also give beginner and advanced **workshops** in R.
+I completed my **PhD** in biostatistics at the University of Hohenheim in 2019 and have been working as a **data scientist** in life sciences at [BioMath](https://www.biomath.de/) since then. I also give beginner and advanced **workshops** in R. I like when complicated methods are explained well, when results are presented in a concise yet beautiful manner and when R does its magic.
 
 <p align="center"><a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CV/CVeng.pdf" target="_blank" rel="noopener noreferrer">&#128195;Curriculum Vitae (CV)</a></p>
 
 </div> <div class = "col-md-7">
 
-Ich habe 2019 meine **Promotion** im Fachgebiet Biostatistik an der Universität Hohenheim abgeschlossen und arbeite seitdem als **Data Scientist** in den Life Sciences bei [BioMath](https://www.biomath.de/). Außerdem gebe ich **Workshops** in R für Einsteiger und Fortgeschrittene.
+Ich habe 2019 meine **Promotion** im Fachgebiet Biostatistik an der Universität Hohenheim abgeschlossen und arbeite seitdem als **Data Scientist** in den Life Sciences bei [BioMath](https://www.biomath.de/). Außerdem gebe ich **Workshops** in R für Einsteiger und Fortgeschrittene. Ich mag es, wenn komplizierte Methoden gut erklärt werden, wenn Ergebnisse prägnant und anschaulich präsentiert werden und wenn R seine Magie entfaltet.
 
 <p align="center"><a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CV/CVger.pdf" target="_blank" rel="noopener noreferrer">&#128195;Lebenslauf</a></p>
 
 </div>
-
-# Workshops
 
 <!-- Workshop Tabelle -->
 ```{r workshops}
