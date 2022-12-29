@@ -17,12 +17,9 @@ options(knitr.kable.NA = '')
 pacman::p_load(kableExtra, formattable, here, htmltools, readxl, tidyverse)
 ```
 
-<div class = "row"> <div class = "col-md-5">
-
-<!-- Contact symbols -->
-<style>
-p.small {line-height: 1;}
-</style>
+<!-- Contact symbols left -->
+<div class = "row"> 
+<div class = "col-md-5">
 
 Contact </br>
 <a href="mailto:schmidtpaul1989@outlook.com">
@@ -46,36 +43,52 @@ Contact </br>
 <i class="fa fa-home" style="color: #00923f;">
 </i> Hamburg, Germany </br>
 
-</div> <div class = "col-md-7">
+</div> 
+<!-- Contact symbols right -->
+<div class = "col-md-7">
 
-Website</br>
+Website </br>
 <a href="https://schmidtpaul.github.io/dsfair_quarto/">
 <img src="https://github.com/SchmidtPaul/dsfair_quarto/blob/master/img/favicon-32x32.png?raw=true" width=16 height=16/>
 </i> DSFAIR: Data Science for Agriculture in R </a> </br>
 <a href="https://schmidtpaul.github.io/MMFAIR/"></a>
 
-R-package</br>
+R-package </br>
 <a href="https://schmidtpaul.github.io/CitaviR/">
 <img src="https://raw.githubusercontent.com/SchmidtPaul/CitaviR/master/docs/favicon-32x32.png" width=16 height=16/>
 </i> CitaviR: A set of tools for dealing with Citavi data </a> </br>
 
-</p>
-
-</div> </div>
-
-<!-- Kurzbeschreibung -->
-<div class = "row"> <div class = "col-md-5">
-I completed my **PhD** in biostatistics at the University of Hohenheim in 2019 and have been working as a **data scientist** in life sciences at [BioMath](https://www.biomath.de/) since then. I also give beginner and advanced **workshops** in R. I like when complicated methods are explained well, when results are presented in a concise yet beautiful manner and when R does its magic.
-
-<p align="center"><a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CV/CVeng.pdf" target="_blank" rel="noopener noreferrer">&#128195;Curriculum Vitae (CV)</a></p>
-
-</div> <div class = "col-md-7">
-
-Ich habe 2019 meine **Promotion** im Fachgebiet Biostatistik an der Universität Hohenheim abgeschlossen und arbeite seitdem als **Data Scientist** in den Life Sciences bei [BioMath](https://www.biomath.de/). Außerdem gebe ich **Workshops** in R für Einsteiger und Fortgeschrittene. Ich mag es, wenn komplizierte Methoden gut erklärt werden, wenn Ergebnisse prägnant und anschaulich präsentiert werden und wenn R seine Magie entfaltet.
-
-<p align="center"><a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CV/CVger.pdf" target="_blank" rel="noopener noreferrer">&#128195;Lebenslauf</a></p>
-
+</div> 
 </div>
+
+
+
+
+
+<!-- Kurzbeschreibung eng -->
+<div class = "row"> 
+<div class = "col-md-5">
+I completed my **PhD** in biostatistics at the University of Hohenheim in 2019 and have been working as a **data scientist** in life sciences at <a href="https://www.biomath.de/">
+<img src="https://raw.githubusercontent.com/SchmidtPaul/Schmidtpaul.github.io/main/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/>
+</i>BioMath</a> since then. I also give beginner and advanced **workshops** in R (see table below). I like when complicated methods are explained well, when results are presented in a concise yet beautiful manner and when R does its magic.
+</div> 
+<!-- Kurzbeschreibung deu -->
+<div class = "col-md-7">
+Ich habe 2019 meine **Promotion** im Fachgebiet Biostatistik an der Universität Hohenheim abgeschlossen und arbeite seitdem als **Data Scientist** in den Life Sciences bei <a href="https://www.biomath.de/">
+<img src="https://raw.githubusercontent.com/SchmidtPaul/Schmidtpaul.github.io/main/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/>
+</i>BioMath</a>. Außerdem gebe ich **Workshops** in R für Einsteiger und Fortgeschrittene (siehe Tabelle unten). Ich mag es, wenn komplizierte Methoden gut erklärt werden, wenn Ergebnisse prägnant und anschaulich präsentiert werden und wenn R auf scheinbar magische Weise Ergebnisse liefert.
+</div>
+</div>
+
+<div class = "row"> 
+<div class = "col-md-5">
+<p align="center"><a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CV/CVeng.pdf" target="_blank" rel="noopener noreferrer">&#128195;Curriculum Vitae (CV)</a></p>
+</div> 
+<div class = "col-md-7">
+<p align="center"><a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CV/CVger.pdf" target="_blank" rel="noopener noreferrer">&#128195;Lebenslauf</a></p>
+</div> 
+</div>
+<br>
 
 <!-- Workshop Tabelle -->
 ```{r workshops}
@@ -92,7 +105,8 @@ whiteURL <- "https://www.ict-solutions-events.com/wp-content/uploads/2020/03/pla
 # import workshop excel
 workshops <- read_excel(here("src", "workshops.xlsx")) %>% 
   select(-Title_forcedEng) %>% 
-  mutate(across(Location, ~ str_remove(.x, "zoom")))
+  mutate(across(Location, ~ str_remove(.x, "zoom"))) %>% 
+  rename("Workshop Title" = Title)
 
 # prepare flag icons
 LangFlags <- workshops %>%
