@@ -53,7 +53,10 @@ Website </br>
 </i> DSFAIR: Data Science for Agriculture in R </a> </br>
 <a href="https://schmidtpaul.github.io/MMFAIR/"></a>
 
-R-package </br>
+R-packages </br>
+<a href="https://schmidtpaul.github.io/BioMathR/">
+<img src="https://raw.githubusercontent.com/SchmidtPaul/BioMathR/main/docs/favicon-32x32.png" width=16 height=16/>
+</i> BioMathR: Utility functions used at BioMath </a> </br>
 <a href="https://schmidtpaul.github.io/CitaviR/">
 <img src="https://raw.githubusercontent.com/SchmidtPaul/CitaviR/master/docs/favicon-32x32.png" width=16 height=16/>
 </i> CitaviR: A set of tools for dealing with Citavi data </a> </br>
