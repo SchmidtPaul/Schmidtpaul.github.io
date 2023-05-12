@@ -28,6 +28,7 @@ h6 {
   display: block;
   height: 200px;
   margin: 10px 0px 10px 0px;
+  border: none;
   background-image: url("img/paulzoomcircle.png");
   background-size: contain;
   background-position: center center;
