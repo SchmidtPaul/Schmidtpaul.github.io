@@ -64,16 +64,12 @@ R-packages </br>
 </div> 
 </div>
 
-
-
-
-
 <!-- Kurzbeschreibung eng -->
 <div class = "row"> 
 <div class = "col-md-5">
 I completed my **PhD** in biostatistics at the University of Hohenheim in 2019 and have been working as a **data scientist** in life sciences at <a href="https://www.biomath.de/">
 <img src="https://raw.githubusercontent.com/SchmidtPaul/Schmidtpaul.github.io/main/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/>
-</i>BioMath</a> since then. I also give beginner and advanced **workshops** in R (see table below). I like when complicated methods are explained well, when results are presented in a concise yet beautiful manner and when R does its magic.
+</i>BioMath</a> since then. I also teach beginner and advanced **workshops** in R (see table below). I like when complicated methods are explained well, when results are presented in a concise yet beautiful manner and when R does its magic.
 </div> 
 <!-- Kurzbeschreibung deu -->
 <div class = "col-md-7">
