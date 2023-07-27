@@ -12,6 +12,7 @@ output:
 #| echo: false
 #| warning: false
 #| message: false
+#| results: 'hide'
 
 options(knitr.kable.NA = '')
 pacman::p_load(kableExtra, formattable, here, htmltools, readxl, tidyverse)
