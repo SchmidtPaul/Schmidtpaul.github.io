@@ -23,6 +23,10 @@ h6 {
 /***************************/
 /* Table of contents start */
 
+#TOC {
+  border: none !important;
+}
+
 #TOC::before {
   content: "";
   display: block;
@@ -99,4 +103,11 @@ a:active {
   left: 50%;
   transform: translate(-50%, 0%);
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#headerbanner:hover img {
+    transform: translate(-50%, 0%) scale(1.2, 1.2);
+    z-index: 9;
+    transition: transform 0.5s ease;
 }
