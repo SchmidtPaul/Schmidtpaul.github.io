@@ -23,15 +23,17 @@ pacman::p_load(kableExtra, formattable, here, htmltools, readxl, tidyverse)
 <div class = "col-md-5">
 
 Contact </br>
-<a href="mailto:schmidtpaul1989@outlook.com">
 <i class="fa fa-envelope" style="color: #00923f;">
-</i> schmidtpaul1989@outlook.com </a> </br>
+</i> schmidtpaul1989 [at] outlook [dot] com </a> </br>
 <a href="https://github.com/SchmidtPaul/">
 <i class="fa fa-github" style="color: #00923f;">
 </i> GitHub </a> </br>
 <a href="https://www.linkedin.com/in/schmidtpaul1989/">
 <i class="fa fa-linkedin" style="color: #00923f;">
 </i> LinkedIn </a> </br>
+<a href="https://mastodon.social/@Schmidtpaul1989">
+<span style="font-weight: bold; color: #00923f;">m</span>
+</i> Mastodon </a> </br>
 <a href="https://twitter.com/SchmidtPaul1989">
 <i class="fa fa-twitter" style="color: #00923f;">
 </i> Twitter </a> </br>
@@ -51,8 +53,10 @@ Contact </br>
 Website </br>
 <a href="https://schmidtpaul.github.io/dsfair_quarto/">
 <img src="https://github.com/SchmidtPaul/dsfair_quarto/blob/master/img/favicon-32x32.png?raw=true" width=16 height=16/>
-</i> DSFAIR: Data Science for Agriculture in R </a> </br>
-<a href="https://schmidtpaul.github.io/MMFAIR/"></a>
+</i> DSFAIR - Data Science for Agriculture in R </a> </br>
+<a href="https://www.biomath.de/">
+<img src="https://raw.githubusercontent.com/SchmidtPaul/Schmidtpaul.github.io/main/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/>
+</i>BioMath - Applied statistics and informatics in life sciences</a>
 
 R-packages </br>
 <a href="https://schmidtpaul.github.io/BioMathR/">
@@ -61,6 +65,9 @@ R-packages </br>
 <a href="https://schmidtpaul.github.io/CitaviR/">
 <img src="https://raw.githubusercontent.com/SchmidtPaul/CitaviR/master/docs/favicon-32x32.png" width=16 height=16/>
 </i> CitaviR: A set of tools for dealing with Citavi data </a> </br>
+<a href="https://schmidtpaul.github.io/sankeyD3plus/">
+<img src="https://raw.githubusercontent.com/SchmidtPaul/sankeyD3plus/main/docs/favicon-32x32.png" width=16 height=16/>
+</i> sankeyD3plus: D3 JavaScript Sankey diagrams in R </a> </br>
 
 </div> 
 </div>
@@ -68,13 +75,13 @@ R-packages </br>
 <!-- Kurzbeschreibung eng -->
 <div class = "row"> 
 <div class = "col-md-5">
-I completed my **PhD** in biostatistics at the University of Hohenheim in 2019 and have been working as a **data scientist** in life sciences at <a href="https://www.biomath.de/">
+I completed my **PhD** in **biostatistics** at the University of Hohenheim in 2019 and have been working as a **data scientist** in life sciences at <a href="https://www.biomath.de/">
 <img src="https://raw.githubusercontent.com/SchmidtPaul/Schmidtpaul.github.io/main/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/>
 </i>BioMath</a> since then. I also teach beginner and advanced **workshops** in R (see table below). I like when complicated methods are explained well, when results are presented in a concise yet beautiful manner and when R does its magic.
 </div> 
 <!-- Kurzbeschreibung deu -->
 <div class = "col-md-7">
-Ich habe 2019 meine **Promotion** im Fachgebiet Biostatistik an der Universität Hohenheim abgeschlossen und arbeite seitdem als **Data Scientist** in den Life Sciences bei <a href="https://www.biomath.de/">
+Ich habe 2019 meine **Promotion** im Fachgebiet **Biostatistik** an der Universität Hohenheim abgeschlossen und arbeite seitdem als **Data Scientist** in den Life Sciences bei <a href="https://www.biomath.de/">
 <img src="https://raw.githubusercontent.com/SchmidtPaul/Schmidtpaul.github.io/main/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/>
 </i>BioMath</a>. Außerdem gebe ich **Workshops** in R für Einsteiger und Fortgeschrittene (siehe Tabelle unten). Ich mag es, wenn komplizierte Methoden gut erklärt werden, wenn Ergebnisse prägnant und anschaulich präsentiert werden und wenn R auf scheinbar magische Weise Ergebnisse liefert.
 </div>
