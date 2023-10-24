@@ -36,7 +36,7 @@ Contact </br>
 </i> Mastodon </a> </br>
 <a href="https://twitter.com/SchmidtPaul1989">
 <i class="fa fa-twitter" style="color: #00923f;">
-</i> Twitter </a> </br>
+</i> Twitter (X) </a> </br>
 <a href="https://www.researchgate.net/profile/Paul_Schmidt17">
 <i class="fa fa-pencil" style="color: #00923f;">
 </i> ResearchGate </a> </br>
@@ -75,13 +75,13 @@ R-packages </br>
 <!-- Kurzbeschreibung eng -->
 <div class = "row"> 
 <div class = "col-md-5">
-I completed my **PhD** in **biostatistics** at the University of Hohenheim in 2019 and have been working as a **data scientist** in life sciences at <a href="https://www.biomath.de/">
+I completed <a href='https://opus.uni-hohenheim.de/volltexte/2020/1720/'>my **PhD** in **biostatistics**</a> at the University of Hohenheim in 2019 and have been working as a **data scientist** in life sciences at <a href="https://www.biomath.de/">
 <img src="https://raw.githubusercontent.com/SchmidtPaul/Schmidtpaul.github.io/main/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/>
 </i>BioMath</a> since then. I also teach beginner and advanced **workshops** in R (see table below). I like when complicated methods are explained well, when results are presented in a concise yet beautiful manner and when R does its magic.
 </div> 
 <!-- Kurzbeschreibung deu -->
 <div class = "col-md-7">
-Ich habe 2019 meine **Promotion** im Fachgebiet **Biostatistik** an der Universität Hohenheim abgeschlossen und arbeite seitdem als **Data Scientist** in den Life Sciences bei <a href="https://www.biomath.de/">
+Ich habe 2019 <a href='https://opus.uni-hohenheim.de/volltexte/2020/1720/'>meine **Promotion**</a> im Fachgebiet **Biostatistik** an der Universität Hohenheim abgeschlossen und arbeite seitdem als **Data Scientist** in den Life Sciences bei <a href="https://www.biomath.de/">
 <img src="https://raw.githubusercontent.com/SchmidtPaul/Schmidtpaul.github.io/main/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/>
 </i>BioMath</a>. Außerdem gebe ich **Workshops** in R für Einsteiger und Fortgeschrittene (siehe Tabelle unten). Ich mag es, wenn komplizierte Methoden gut erklärt werden, wenn Ergebnisse prägnant und anschaulich präsentiert werden und wenn R auf scheinbar magische Weise Ergebnisse liefert.
 </div>
@@ -108,6 +108,9 @@ GerFlagURL <- "https://cdn.countryflags.com/thumbs/germany/flag-round-250.png"
 USAFlagURL <- "https://cdn.countryflags.com/thumbs/united-states-of-america/flag-round-250.png"
 zoomLogoURL <- "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png"
 whiteURL <- "https://www.ict-solutions-events.com/wp-content/uploads/2020/03/plain-white-background-300x200.jpg"
+r_logo_URL <- "https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/src/RStudio_logo.png?raw=true"
+py_logo_URL <- "https://cdn.freebiesupply.com/logos/large/2x/python-5-logo-png-transparent.png"
+sas_logo_URL <- "https://cdn.icon-icons.com/icons2/2699/PNG/512/sas_logo_icon_170761.png"
 
 # import workshop excel
 workshops <- read_excel(here("src", "workshops.xlsx")) %>% 
@@ -116,8 +119,7 @@ workshops <- read_excel(here("src", "workshops.xlsx")) %>%
   rename("Workshop Title" = Title)
 
 # prepare flag icons
-LangFlags <- workshops %>%
-  dplyr::select(Language) %>%
+imgs_flag <- workshops %>%
   mutate(
     LangURL = case_when(
       Language == "Ger" ~ GerFlagURL,
@@ -127,34 +129,68 @@ LangFlags <- workshops %>%
   ) %>% pull(LangURL)
 
 # prepare zoom icons
-LocZoom <- workshops %>%
-  dplyr::select(Location) %>%
-  mutate(LogoURL = case_when(str_detect(Location, "via") == T ~ zoomLogoURL,
-                             T ~ whiteURL)) %>% pull(LogoURL)
+imgs_zoom <- workshops %>%
+  mutate(LogoURL = case_when(
+    str_detect(Location, "via") == T ~ zoomLogoURL,
+    T ~ whiteURL)
+  ) %>% pull(LogoURL)
 
+# prepare platform icons
+imgs_platform <- workshops %>%
+  mutate(PlatformURL = case_when(
+    Platform == "R" ~ r_logo_URL,
+    Platform == "Python" ~ py_logo_URL,
+    Platform == "SAS" ~ sas_logo_URL,
+    .default = whiteURL)) %>% 
+  pull(PlatformURL)
+
+workshops <- workshops %>% 
+  mutate(Language = "", Platform="")
+
+# handle duration bar
 workshops <- workshops %>%
   mutate(
-    Duration = Duration %>%
-      str_remove("h") %>%
-      as.integer() %>%
-      color_bar("lightgrey")(.) %>%
-      str_replace("</span>", "h</span>")
+    Dur_lab = str_c("> ", Duration, "</span>"),
+    Dur_val = str_remove(Duration, "h") %>% as.integer(),
+  ) %>% 
+  mutate(
+    Duration = pmin(25, Dur_val) %>% 
+      color_bar("lightgrey")(.) %>% 
+      str_replace_all(">\\d+</span>", Dur_lab)
+  ) %>% 
+  mutate(Duration = case_when(
+    Dur_val > 24 ~ str_replace(Duration, "lightgrey", "darkgrey"),
+    .default = Duration
+  )) %>% 
+  select(-starts_with("Dur_"))
+
+# add BMEL hyperlink
+workshops <- workshops %>%
+  mutate(
+    Location = str_replace_all(
+      Location,
+      c("Forschungseinrichtungen BMEL" = "<a href='https://biometrie-bmel.de/About'>Forschungseinrichtungen BMEL</a>",
+        "Forsch.Einr. BMEL" = "<a href='https://biometrie-bmel.de/About'>Forsch.Einr. BMEL</a>")
+    )
   )
+
 # print table
 tbl <- workshops %>%
   dplyr::select(-URL) %>%
-  kbl(align = c("r", "l", "r", "r", "l"), escape = F) %>%
+  kbl(align = c("r", "l", "r", "r", "r", "l"), escape = F) %>%
   kable_minimal(
     full_width = T,
     font_size = 10,
     bootstrap_options = c("hover", "condensed")
   ) %>%
   column_spec(1, width = "5em") %>%
-  column_spec(3, width = "5em",
-              image = spec_image(LangFlags, 50, 50)) %>%
-  column_spec(4, width = "20em",
-              image = spec_image(LocZoom, 100, 20)) %>%
-  column_spec(5, width = "5em")
+  column_spec(3, width = "3em",
+              image = spec_image(imgs_flag, 50, 50)) %>%
+  column_spec(4, width = "3em",
+              image = spec_image(imgs_platform, 50, 50)) %>% 
+  column_spec(5, width = "20em",
+              image = spec_image(imgs_zoom, 100, 20)) %>%
+  column_spec(6, width = "5em")
 
 tbl
 ```
