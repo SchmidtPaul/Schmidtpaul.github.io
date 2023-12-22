@@ -77,13 +77,13 @@ R-packages </br>
 <div class = "col-md-5">
 I completed <a href='https://opus.uni-hohenheim.de/volltexte/2020/1720/'>my **PhD** in **biostatistics**</a> at the University of Hohenheim in 2019 and have been working as a **data scientist** in life sciences at <a href="https://www.biomath.de/">
 <img src="https://raw.githubusercontent.com/SchmidtPaul/Schmidtpaul.github.io/main/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/>
-</i>BioMath</a> since then. I also teach beginner and advanced **workshops** in R (see table below). I like when complicated methods are explained well, when results are presented in a concise yet beautiful manner and when R does its magic.
+</i>BioMath</a> since then. I also teach beginner and advanced **workshops** in R and Python (see table below). I like when complicated methods are explained well, when results are presented in a concise yet beautiful manner and when R does its magic.
 </div> 
 <!-- Kurzbeschreibung deu -->
 <div class = "col-md-7">
 Ich habe 2019 <a href='https://opus.uni-hohenheim.de/volltexte/2020/1720/'>meine **Promotion**</a> im Fachgebiet **Biostatistik** an der Universität Hohenheim abgeschlossen und arbeite seitdem als **Data Scientist** in den Life Sciences bei <a href="https://www.biomath.de/">
 <img src="https://raw.githubusercontent.com/SchmidtPaul/Schmidtpaul.github.io/main/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/>
-</i>BioMath</a>. Außerdem gebe ich **Workshops** in R für Einsteiger und Fortgeschrittene (siehe Tabelle unten). Ich mag es, wenn komplizierte Methoden gut erklärt werden, wenn Ergebnisse prägnant und anschaulich präsentiert werden und wenn R auf scheinbar magische Weise Ergebnisse liefert.
+</i>BioMath</a>. Außerdem gebe ich **Workshops** in R und Python für Einsteiger und Fortgeschrittene (siehe Tabelle unten). Ich mag es, wenn komplizierte Methoden gut erklärt werden, wenn Ergebnisse prägnant und anschaulich präsentiert werden und wenn R auf scheinbar magische Weise Ergebnisse liefert.
 </div>
 </div>
 
@@ -193,5 +193,30 @@ tbl <- workshops %>%
   column_spec(6, width = "5em")
 
 tbl
+```
+
+```{r}
+#| eval: false
+#| echo: false
+#| warning: false
+#| message: false
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+# Create a data frame with the testimonials
+testimonials_df <- tibble(
+  Testimonial = c(
+    "This workshop was incredibly insightful and engaging!",
+    "I've learned so much about data science and R, highly recommended."
+  ),
+  Participant = c("Jane Doe", "John Smith")
+)
+
+# Use kable and kableExtra to create the table
+kable(testimonials_df, format = "html", col.names = NA, align = 'l') %>% 
+  kable_styling(full_width = F, position = "left") %>%
+  row_spec(0, extra_css = "border-top: hidden;") %>%
+  add_header_above(c(" " = 2))
 ```
 
