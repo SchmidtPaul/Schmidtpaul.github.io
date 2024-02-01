@@ -164,15 +164,16 @@ workshops <- workshops %>%
   )) %>% 
   select(-starts_with("Dur_"))
 
-# add BMEL hyperlink
+# add hyperlinks
 workshops <- workshops %>%
-  mutate(
-    Location = str_replace_all(
-      Location,
-      c("Forschungseinrichtungen BMEL" = "<a href='https://biometrie-bmel.de/About'>Forschungseinrichtungen BMEL</a>",
-        "Forsch.Einr. BMEL" = "<a href='https://biometrie-bmel.de/About'>Forsch.Einr. BMEL</a>")
+  mutate(Location = str_replace_all(
+    Location,
+    c(
+      "Forschungseinrichtungen BMEL" = "<a href='https://biometrie-bmel.de/About'>Forschungseinrichtungen BMEL</a>",
+      "Forsch.Einr. BMEL" = "<a href='https://biometrie-bmel.de/About'>Forsch.Einr. BMEL</a>",
+      "70th Biometrical Colloquium" = "<a href='https://www.biometrische-gesellschaft.de/en/events/biometric-colloquia/70th-biometrical-colloquium-2024-in-luebeck/conference-program.html'>70th Biometrical Colloquium</a>"
     )
-  )
+  ))
 
 # print table
 tbl <- workshops %>%

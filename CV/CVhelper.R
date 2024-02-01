@@ -61,7 +61,7 @@ for (LANG in langs) {
                "\\&" = "\\\\&",
                "\\_" = "\\\\_"
              ))) %>% 
-    mutate(cat = str_c("\\cvskill {", name,"} \n{", content," } \n")) %>% 
+    mutate(cat = str_c("\\cvskill {", name,"} \n{", content,"} \n")) %>% 
     pull(cat) %>% 
     str_c(collapse = "\n")
   }

@@ -48,18 +48,20 @@ cat(d$ski$eng)
 cat("\\end{cvskills} \n")
 ```
 
-# Workshops
-
-```{r, results = "asis"}
-cat("\\begin{cvhonors} \n")
-cat(d$workshops)
-cat("\\end{cvhonors} \n")
-```
-
 # Scientific publications
 
 \footnotesize
 
 ```{r}
 d$pub
+```
+
+\newpage
+
+# Workshops
+
+```{r, results = "asis"}
+cat("\\begin{cvhonors} \n")
+cat(d$workshops)
+cat("\\end{cvhonors} \n")
 ```

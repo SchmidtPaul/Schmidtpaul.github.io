@@ -48,6 +48,16 @@ cat(d$ski$ger)
 cat("\\end{cvskills} \n")
 ```
 
+# Publikationen
+
+\footnotesize
+
+```{r}
+d$pub
+```
+
+\newpage
+
 # Workshops
 
 ```{r, results = "asis"}
@@ -56,10 +66,4 @@ cat(d$workshops)
 cat("\\end{cvhonors} \n")
 ```
 
-# Publikationen
 
-\footnotesize
-
-```{r}
-d$pub
-```
