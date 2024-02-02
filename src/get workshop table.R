@@ -26,7 +26,7 @@ IDs_with_eval <- list.files(here::here("src", "eval"), ".pdf$") %>%
 workshops <- workshops %>% 
   mutate(
     Eval = case_when(
-      ID %in% IDs_with_eval ~ str_c('<a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/src/eval/', ID,'.pdf" target="_blank">view</a>'),
+      ID %in% IDs_with_eval ~ str_c('<a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/src/eval/eval_', ID,'.pdf" target="_blank">view</a>'),
       .default = ""
     )
   ) %>% 
@@ -81,17 +81,15 @@ workshops <- workshops %>%
     bootstrap_options = c("hover", "condensed")
   ) %>%
   column_spec(1, width = "4em") %>%
-  column_spec(2, width = "23em") %>% 
+  column_spec(2, width = "26em") %>% 
   column_spec(3, width = "2em",
               image = spec_image(imgs_flag, 50, 50)) %>%
   column_spec(4, width = "2em",
               image = spec_image(imgs_platform, 50, 50)) %>% 
-  column_spec(5, width = "20em") %>%
+  column_spec(5, width = "17em") %>%
   column_spec(6, width = "4em") %>% 
   column_spec(7, width = "2em")
 
-
-workshops
 # gt instead of kable -----------------------------------------------------
 
 # # gt ----------------------------------------------------------------------
