@@ -1,3 +1,4 @@
+library(googlesheets4) # gs4_auth()
 library(here)
 library(lubridate)
 library(readxl)
@@ -75,11 +76,14 @@ d$pub <- here("CV", "publications.bib") %>%
 
 
 # workshops ----------------------------------------------------------------
-d$workshops <- read_excel(here("src", "workshops.xlsx")) %>% 
-  mutate(Title = Title %>% 
-           str_replace_all(c("experimental" = "exp.",
-                             "experimentellen" = "exp.",
-                             "Naturwissenschaften" = "Naturwiss."))
+sheet_url <- "https://docs.google.com/spreadsheets/d/1wSK6RiqaAWFqxaAd8VlXA4v0LQib0CevTopTAMFHzgs/edit?usp=sharing"
+
+d$workshops <- read_sheet(sheet_url) %>%
+  select(
+    Title,
+    Location = Label_Location,
+    Duration = Label_h,
+    Time = Label_Time
   ) %>% 
   transmute(
     cat = str_c(
@@ -92,4 +96,6 @@ d$workshops <- read_excel(here("src", "workshops.xlsx")) %>%
   ) %>% 
   pull(cat) %>% 
   str_c(collapse = "\n\n")
+
+
 
