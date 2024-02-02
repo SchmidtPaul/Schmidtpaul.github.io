@@ -18,6 +18,21 @@ workshops <- raw %>%
   ) 
 
 
+# Evaluations -------------------------------------------------------------
+IDs_with_eval <- list.files(here::here("src", "eval"), ".pdf$") %>% 
+  str_remove(".pdf$") %>% 
+  str_remove("eval_")
+
+workshops <- workshops %>% 
+  mutate(
+    Eval = case_when(
+      ID %in% IDs_with_eval ~ str_c('<a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/src/eval/', ID,'.pdf" target="_blank">view</a>'),
+      .default = ""
+    )
+  ) %>% 
+  select(-ID)
+
+
 # Flags -------------------------------------------------------------------
 flag_urls <- c(Ger = "https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/img/flag_ger.png?raw=true",
                Eng = "https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/img/flag_usa.png?raw=true")
@@ -72,9 +87,11 @@ workshops <- workshops %>%
   column_spec(4, width = "2em",
               image = spec_image(imgs_platform, 50, 50)) %>% 
   column_spec(5, width = "20em") %>%
-  column_spec(6, width = "4em")
+  column_spec(6, width = "4em") %>% 
+  column_spec(7, width = "2em")
 
 
+workshops
 # gt instead of kable -----------------------------------------------------
 
 # # gt ----------------------------------------------------------------------
