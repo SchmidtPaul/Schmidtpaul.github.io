@@ -97,101 +97,14 @@ Ich habe 2019 <a href='https://opus.uni-hohenheim.de/volltexte/2020/1720/'>meine
 </div>
 <br>
 
+<p align="center">Below is a list of the workshops I've given. Clicking on the `r sprintf('<span style="color: #00923f;">%s</span>', as.character(fontawesome::fa("ranking-star")))` symbol links to the workshop's evaluation.</p>
+
 <!-- Workshop Tabelle -->
 ```{r workshops}
 #| echo: false
 #| warning: false
 #| message: false
 
-# # get icons
-# GerFlagURL <- "https://cdn.countryflags.com/thumbs/germany/flag-round-250.png"
-# USAFlagURL <- "https://cdn.countryflags.com/thumbs/united-states-of-america/flag-round-250.png"
-# zoomLogoURL <- "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png"
-# whiteURL <- "https://www.ict-solutions-events.com/wp-content/uploads/2020/03/plain-white-background-300x200.jpg"
-# r_logo_URL <- "https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/src/RStudio_logo.png?raw=true"
-# py_logo_URL <- "https://cdn.freebiesupply.com/logos/large/2x/python-5-logo-png-transparent.png"
-# sas_logo_URL <- "https://cdn.icon-icons.com/icons2/2699/PNG/512/sas_logo_icon_170761.png"
-# 
-# # import workshop excel
-# workshops <- read_excel(here("src", "workshops.xlsx")) %>% 
-#   select(-Title_forcedEng) %>% 
-#   mutate(across(Location, ~ str_remove(.x, "zoom"))) %>% 
-#   rename("Workshop Title" = Title)
-# 
-# # prepare flag icons
-# imgs_flag <- workshops %>%
-#   mutate(
-#     LangURL = case_when(
-#       Language == "Ger" ~ GerFlagURL,
-#       Language == "Eng" ~ USAFlagURL,
-#       T ~ NA_character_
-#     )
-#   ) %>% pull(LangURL)
-# 
-# # prepare zoom icons
-# imgs_zoom <- workshops %>%
-#   mutate(LogoURL = case_when(
-#     str_detect(Location, "via") == T ~ zoomLogoURL,
-#     T ~ whiteURL)
-#   ) %>% pull(LogoURL)
-# 
-# # prepare platform icons
-# imgs_platform <- workshops %>%
-#   mutate(PlatformURL = case_when(
-#     Platform == "R" ~ r_logo_URL,
-#     Platform == "Python" ~ py_logo_URL,
-#     Platform == "SAS" ~ sas_logo_URL,
-#     .default = whiteURL)) %>% 
-#   pull(PlatformURL)
-# 
-# workshops <- workshops %>% 
-#   mutate(Language = "", Platform="")
-# 
-# # handle duration bar
-# workshops <- workshops %>%
-#   mutate(
-#     Dur_lab = str_c("> ", Duration, "</span>"),
-#     Dur_val = str_remove(Duration, "h") %>% as.integer(),
-#   ) %>% 
-#   mutate(
-#     Duration = pmin(25, Dur_val) %>% 
-#       color_bar("lightgrey")(.) %>% 
-#       str_replace_all(">\\d+</span>", Dur_lab)
-#   ) %>% 
-#   mutate(Duration = case_when(
-#     Dur_val > 24 ~ str_replace(Duration, "lightgrey", "darkgrey"),
-#     .default = Duration
-#   )) %>% 
-#   select(-starts_with("Dur_"))
-# 
-# # add hyperlinks
-# workshops <- workshops %>%
-#   mutate(Location = str_replace_all(
-#     Location,
-#     c(
-#       "Forschungseinrichtungen BMEL" = "<a href='https://biometrie-bmel.de/About'>Forschungseinrichtungen BMEL</a>",
-#       "Forsch.Einr. BMEL" = "<a href='https://biometrie-bmel.de/About'>Forsch.Einr. BMEL</a>",
-#       "70th Biometrical Colloquium" = "<a href='https://www.biometrische-gesellschaft.de/en/events/biometric-colloquia/70th-biometrical-colloquium-2024-in-luebeck/conference-program.html'>70th Biometrical Colloquium</a>"
-#     )
-#   ))
-# 
-# # print table
-# tbl <- workshops %>%
-#   dplyr::select(-URL) %>%
-#   kbl(align = c("r", "l", "r", "r", "r", "l"), escape = F) %>%
-#   kable_minimal(
-#     full_width = T,
-#     font_size = 10,
-#     bootstrap_options = c("hover", "condensed")
-#   ) %>%
-#   column_spec(1, width = "5em") %>%
-#   column_spec(3, width = "3em",
-#               image = spec_image(imgs_flag, 50, 50)) %>%
-#   column_spec(4, width = "3em",
-#               image = spec_image(imgs_platform, 50, 50)) %>% 
-#   column_spec(5, width = "20em",
-#               image = spec_image(imgs_zoom, 100, 20)) %>%
-#   column_spec(6, width = "5em")
 source(here("src", "get workshop table.R"))
 workshops
 ```

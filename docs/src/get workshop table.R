@@ -1,4 +1,4 @@
-pacman::p_load(formattable, googlesheets4, gtExtras, here, htmltools, kableExtra, tidyverse)
+pacman::p_load(fontawesome, formattable, googlesheets4, gtExtras, here, htmltools, kableExtra, tidyverse)
 
 
 # get table ---------------------------------------------------------------
@@ -25,9 +25,9 @@ IDs_with_eval <- list.files(here::here("src", "eval"), ".pdf$") %>%
 
 workshops <- workshops %>% 
   mutate(
-    Eval = case_when(
-      ID %in% IDs_with_eval ~ str_c('<a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/src/eval/eval_', ID,'.pdf" target="_blank">view</a>'),
-      .default = ""
+    `Workshop Title` = case_when(
+      ID %in% IDs_with_eval ~ str_c(`Workshop Title`, ' <a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/src/eval/eval_', ID,'.pdf" title="view evaluation" target="_blank" style="color: #00923f;"> ', as.character(fa("ranking-star")), '</a>'),
+      .default = `Workshop Title`
     )
   ) %>% 
   select(-ID)
@@ -73,6 +73,9 @@ workshops <- workshops %>%
   select(-starts_with("Dur_"))
 
 
+
+workshops
+
 workshops <- workshops %>%
   kbl(align = c("r", "l", "r", "r", "r", "l"), escape = F) %>%
   kable_minimal(
@@ -87,8 +90,9 @@ workshops <- workshops %>%
   column_spec(4, width = "2em",
               image = spec_image(imgs_platform, 50, 50)) %>% 
   column_spec(5, width = "17em") %>%
-  column_spec(6, width = "4em") %>% 
-  column_spec(7, width = "2em")
+  column_spec(6, width = "4em")
+
+workshops
 
 # gt instead of kable -----------------------------------------------------
 
