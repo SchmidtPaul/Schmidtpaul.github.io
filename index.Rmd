@@ -97,7 +97,7 @@ Ich habe 2019 <a href='https://opus.uni-hohenheim.de/volltexte/2020/1720/'>meine
 </div>
 <br>
 
-<p align="center">Below is a list of the workshops I've given. Clicking on the `r sprintf('<span style="color: #00923f;">%s</span>', as.character(fontawesome::fa("ranking-star")))` symbol links to the workshop's evaluation.</p>
+<p align="center">Below is a list of workshops given by me. Clicking on the `r sprintf('<span style="color: #00923f;">%s</span>', as.character(fontawesome::fa("ranking-star")))` symbol links to the workshop's evaluation.</p>
 
 <!-- Workshop Tabelle -->
 ```{r workshops}
