@@ -1,5 +1,7 @@
 pacman::p_load(fontawesome, formattable, googlesheets4, gtExtras, here, htmltools, kableExtra, tidyverse)
 
+token <- readRDS(".secrets/gs4_token.rds")
+gs4_auth(token = token)
 
 # get table ---------------------------------------------------------------
 sheet_url <- "https://docs.google.com/spreadsheets/d/1wSK6RiqaAWFqxaAd8VlXA4v0LQib0CevTopTAMFHzgs/edit?usp=sharing"
@@ -72,9 +74,7 @@ workshops <- workshops %>%
   )) %>% 
   select(-starts_with("Dur_"))
 
-
-
-workshops
+# workshops
 
 workshops <- workshops %>%
   kbl(align = c("r", "l", "r", "r", "r", "l"), escape = F) %>%
@@ -92,7 +92,7 @@ workshops <- workshops %>%
   column_spec(5, width = "17em") %>%
   column_spec(6, width = "4em")
 
-workshops
+# workshops
 
 # gt instead of kable -----------------------------------------------------
 

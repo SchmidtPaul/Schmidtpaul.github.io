@@ -105,7 +105,7 @@ Ich habe 2019 <a href='https://opus.uni-hohenheim.de/volltexte/2020/1720/'>meine
 #| warning: false
 #| message: false
 
-source(here("src", "get workshop table.R"))
+source(here::here("src", "get workshop table.R"))
 workshops
 ```
 
