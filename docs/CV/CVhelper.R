@@ -50,64 +50,64 @@ for (item in names(d)) {
 }
 
 
-# # Other Skills ------------------------------------------------------------
-# for (LANG in langs) {
-#   d$ski[[LANG]] <- d$ski[[LANG]] %>% 
-#     group_by(name) %>% 
-#     summarise(content = str_c(content, collapse = ", ")) %>% 
-#     ungroup() %>% 
-#     mutate(content = content %>%
-#              str_replace_all(c(
-#                "\\#" = "\\\\#",
-#                "\\&" = "\\\\&",
-#                "\\_" = "\\\\_"
-#              ))) %>% 
-#     mutate(cat = str_c("\\cvskill {", name,"} \n{", content,"} \n")) %>% 
-#     pull(cat) %>% 
-#     str_c(collapse = "\n")
-#   }
-# 
-# 
-# # publications ------------------------------------------------------------
-# d$pub <- here("CV", "publications.bib") %>% 
-#   vitae::bibliography_entries() %>%
-#   select(-publisher, -`publisher-place`, -genre, -`title-short`) %>% 
-#   arrange(desc(issued), id)
-# 
-# 
-# # workshops ----------------------------------------------------------------
-# token <- readRDS(".secrets/gs4_token.rds")
-# gs4_auth(token = token)
-# 
-# sheet_url <- "https://docs.google.com/spreadsheets/d/1wSK6RiqaAWFqxaAd8VlXA4v0LQib0CevTopTAMFHzgs/edit?usp=sharing"
-# 
-# d$workshops <- read_sheet(sheet_url) %>%
-#   select(
-#     Title,
-#     Location = Label_Location,
-#     Duration = Label_h,
-#     Time = Label_Time
-#   ) 
-# 
-# # Keep maximum of 50 rows in workshops table
+# Other Skills ------------------------------------------------------------
+for (LANG in langs) {
+  d$ski[[LANG]] <- d$ski[[LANG]] %>%
+    group_by(name) %>%
+    summarise(content = str_c(content, collapse = ", ")) %>%
+    ungroup() %>%
+    mutate(content = content %>%
+             str_replace_all(c(
+               "\\#" = "\\\\#",
+               "\\&" = "\\\\&",
+               "\\_" = "\\\\_"
+             ))) %>%
+    mutate(cat = str_c("\\cvskill {", name,"} \n{", content,"} \n")) %>%
+    pull(cat) %>%
+    str_c(collapse = "\n")
+  }
+
+
+# publications ------------------------------------------------------------
+d$pub <- here("CV", "publications.bib") %>%
+  vitae::bibliography_entries() %>%
+  select(-publisher, -`publisher-place`, -genre, -`title-short`) %>%
+  arrange(desc(issued), id)
+
+
+# workshops ----------------------------------------------------------------
+token <- readRDS(".secrets/gs4_token.rds")
+gs4_auth(token = token)
+
+sheet_url <- "https://docs.google.com/spreadsheets/d/1wSK6RiqaAWFqxaAd8VlXA4v0LQib0CevTopTAMFHzgs/edit?usp=sharing"
+
+d$workshops <- read_sheet(sheet_url) %>%
+  select(
+    Title,
+    Location = Label_Location,
+    Duration = Label_h,
+    Time = Label_Time
+  )
+
+# Keep maximum of 50 rows in workshops table
 # d$workshops <- bind_rows(
 #   d$workshops %>% slice(1:45), # first 43 rows
 #   as_tibble(t(rep("...", ncol(d$workshops))), .name_repair = ~ names(d$workshops)), # A '...' row
 #   d$workshops %>% slice((nrow(d$workshops) - 5):nrow(d$workshops)) # Last 6 rows
 # )
-# 
-# d$workshops <- d$workshops %>% 
-#   transmute(
-#     cat = str_c(
-#       "\\cvhonor\n",
-#       "{", Title, "  }\n",
-#       "{", Location, "}\n",
-#       "{", Duration, "}\n",
-#       "{", Time, "  }"
-#     )
-#   ) %>% 
-#   pull(cat) %>% 
-#   str_c(collapse = "\n\n")
-# 
-# 
-# 
+
+d$workshops <- d$workshops %>%
+  transmute(
+    cat = str_c(
+      "\\cvhonor\n",
+      "{", Title, "  }\n",
+      "{", Location, "}\n",
+      "{", Duration, "}\n",
+      "{", Time, "  }"
+    )
+  ) %>%
+  pull(cat) %>%
+  str_c(collapse = "\n\n")
+
+
+

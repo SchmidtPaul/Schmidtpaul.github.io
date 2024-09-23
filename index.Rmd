@@ -31,32 +31,32 @@ Contact </br>
 <a href="https://www.linkedin.com/in/schmidtpaul1989/">
 <i class="fa fa-linkedin" style="color: #00923f;">
 </i> LinkedIn </a> </br>
-<a href="https://mastodon.social/@Schmidtpaul1989">
-<span style="font-weight: bold; color: #00923f;">m</span>
-</i> Mastodon </a> </br>
-<a href="https://twitter.com/SchmidtPaul1989">
-<i class="fa fa-twitter" style="color: #00923f;">
-</i> Twitter (X) </a> </br>
+<!-- <a href="https://mastodon.social/@Schmidtpaul1989"> -->
+<!-- <span style="font-weight: bold; color: #00923f;">m</span> -->
+<!-- </i> Mastodon </a> </br> -->
+<!-- <a href="https://twitter.com/SchmidtPaul1989"> -->
+<!-- <i class="fa fa-twitter" style="color: #00923f;"> -->
+<!-- </i> Twitter (X) </a> </br> -->
 <a href="https://www.researchgate.net/profile/Paul_Schmidt17">
 <i class="fa fa-pencil" style="color: #00923f;">
 </i> ResearchGate </a> </br>
-<a href="https://www.xing.com/profile/Paul_Schmidt393/cv">
-<i class="fa fa-xing" style="color: #00923f;">
-</i> Xing </a> </br> 
-<i class="fa fa-home" style="color: #00923f;">
-</i> Hamburg, Germany </br>
+<!-- <a href="https://www.xing.com/profile/Paul_Schmidt393/cv"> -->
+<!-- <i class="fa fa-xing" style="color: #00923f;"> -->
+<!-- </i> Xing </a> </br>  -->
+<!-- <i class="fa fa-home" style="color: #00923f;"> -->
+<!-- </i> Hamburg, Germany </br> -->
 
 </div> 
 <!-- Contact symbols right -->
 <div class = "col-md-7">
 
 Website </br>
-<a href="https://schmidtpaul.github.io/dsfair_quarto/">
-<img src="https://github.com/SchmidtPaul/dsfair_quarto/blob/master/img/favicon-32x32.png?raw=true" width=16 height=16/>
-</i> DSFAIR - Data Science for Agriculture in R </a> </br>
 <a href="https://www.biomath.de/">
 <img src="https://raw.githubusercontent.com/SchmidtPaul/Schmidtpaul.github.io/main/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/>
-</i>BioMath - Applied statistics and informatics in life sciences</a>
+</i>BioMath - Applied statistics and informatics in life sciences</a> </br>
+<a href="https://schmidtpaul.github.io/dsfair_quarto/">
+<img src="https://github.com/SchmidtPaul/dsfair_quarto/blob/master/img/favicon-32x32.png?raw=true" width=16 height=16/>
+</i> DSFAIR - Data Science for Agriculture in R </a>
 
 R-packages </br>
 <a href="https://schmidtpaul.github.io/BioMathR/">

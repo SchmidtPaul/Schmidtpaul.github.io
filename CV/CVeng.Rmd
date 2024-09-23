@@ -17,9 +17,14 @@ output:
     keep_tex: true
 ---
 
-```{r}
+```{r sourceCVhelper}
 #| include: false
 source(here::here("CV", "CVhelper.R"))
+```
+
+
+```{r knitr_opts}
+#| include: false
 knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE,
                       error = FALSE)

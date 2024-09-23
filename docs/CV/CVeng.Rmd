@@ -19,7 +19,7 @@ output:
 
 ```{r}
 #| include: false
-# source(here::here("CV", "CVhelper.R"))
+source(here::here("CV", "CVhelper.R"))
 knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE,
                       error = FALSE)
@@ -30,38 +30,38 @@ knitr::opts_chunk$set(echo = FALSE,
 
 # Professional experience
 
-<!-- # ```{r} -->
-<!-- # d$job$eng %>% detailed_entries(role, dates, company, loc, details) -->
-<!-- # ``` -->
+```{r}
+d$job$eng %>% detailed_entries(role, dates, company, loc, details)
+```
 
-<!-- # Education -->
+# Education
 
-<!-- ```{r} -->
-<!-- d$edu$eng %>% detailed_entries(degree, dates, uni, loc, details) -->
-<!-- ``` -->
+```{r}
+d$edu$eng %>% detailed_entries(degree, dates, uni, loc, details)
+```
 
-<!-- # Skills -->
+# Skills
 
-<!-- ```{r, results = "asis"} -->
-<!-- cat("\\begin{cvskills} \n") -->
-<!-- cat(d$ski$eng) -->
-<!-- cat("\\end{cvskills} \n") -->
-<!-- ``` -->
+```{r, results = "asis"}
+cat("\\begin{cvskills} \n")
+cat(d$ski$eng)
+cat("\\end{cvskills} \n")
+```
 
-<!-- # Scientific publications -->
+# Scientific publications
 
-<!-- \footnotesize -->
+\footnotesize
 
-<!-- ```{r} -->
-<!-- d$pub -->
-<!-- ``` -->
+```{r}
+d$pub
+```
 
-<!-- \newpage -->
+\newpage
 
-<!-- # Workshops -->
+# Workshops
 
-<!-- ```{r, results = "asis"} -->
-<!-- cat("\\begin{cvhonors} \n") -->
-<!-- cat(d$workshops) -->
-<!-- cat("\\end{cvhonors} \n") -->
-<!-- ``` -->
+```{r, results = "asis"}
+cat("\\begin{cvhonors} \n")
+cat(d$workshops)
+cat("\\end{cvhonors} \n")
+```
