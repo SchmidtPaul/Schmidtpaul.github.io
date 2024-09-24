@@ -90,11 +90,11 @@ d$workshops <- read_sheet(sheet_url) %>%
   )
 
 # Keep maximum of 50 rows in workshops table
-# d$workshops <- bind_rows(
-#   d$workshops %>% slice(1:45), # first 43 rows
-#   as_tibble(t(rep("...", ncol(d$workshops))), .name_repair = ~ names(d$workshops)), # A '...' row
-#   d$workshops %>% slice((nrow(d$workshops) - 5):nrow(d$workshops)) # Last 6 rows
-# )
+d$workshops <- bind_rows(
+  d$workshops %>% slice(1:45), # first 43 rows
+  as_tibble(t(rep("...", ncol(d$workshops))), .name_repair = ~ names(d$workshops)), # A '...' row
+  d$workshops %>% slice((nrow(d$workshops) - 5):nrow(d$workshops)) # Last 6 rows
+)
 
 d$workshops <- d$workshops %>%
   transmute(
