@@ -1,0 +1,310 @@
+/* Typography adjustments */
+h1 { font-size: 26px; }
+h2 { font-size: 24px; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+h6 { font-size: 12px; }
+
+/* Table of contents styling */
+#TOC {
+  border: none !important;
+}
+
+.list-group-item.active,
+.list-group-item.active:focus,
+.list-group-item.active:hover {
+    z-index: 2;
+    color: #f8f9fa;
+    background-color: #00923f;
+    border-color: #00923f;
+}
+
+/* Text selection highlighting */
+::selection {
+  color: #f8f9fa;
+  background: #00923f;
+}
+
+/* Footer styling */
+#footer {
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Link colors - BioMath green theme */
+a:link, a:visited, a:hover, a:active {
+  color: #00923f;
+}
+
+/* Header banner styling */
+#headerbanner {
+  height: 200px;
+  width: 100%;
+}
+
+#headerbanner img {
+  width: 100%;
+  height: 200px;
+  max-width: 1170px;
+  object-fit: cover;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#headerbanner:hover img {
+    transform: translate(-50%, 0%) scale(1.2, 1.2);
+    z-index: 9;
+    transition: transform 0.5s ease;
+}
+
+/* About template width adjustments - From Quarto GitHub discussions */
+.about-contents {
+  flex-grow: 3 !important;
+  flex-shrink: 0 !important;
+  flex-basis: 75% !important;
+}
+
+.about-entity {
+  flex-grow: 0 !important;
+  flex-shrink: 1 !important;
+  flex-basis: 25% !important;
+}
+
+/* Tabset Styling - ABSOLUTELY NO SIZE CHANGES */
+.panel-tabset {
+  margin-bottom: 1rem; /* Reduced from 1.5rem */
+}
+
+.panel-tabset .nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 0.75rem;
+}
+
+.panel-tabset .nav-tabs .nav-link {
+  /* Fixed dimensions - never change */
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 6px 6px 0 0 !important;
+  color: #6c757d !important;
+  font-weight: 500 !important;
+  padding: 0.4rem 0.9rem !important;
+  margin: 0 0.125rem 0 0 !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.3rem !important;
+  /* Prevent all changes */
+  transition: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  /* Fix box model */
+  box-sizing: border-box !important;
+  height: auto !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+}
+
+.panel-tabset .nav-tabs .nav-link:hover {
+  /* ONLY background color change - everything else identical */
+  background-color: rgba(0, 146, 63, 0.1) !important;
+  color: #00923f !important;
+  /* Ensure no other changes */
+  border: 1px solid transparent !important;
+  border-radius: 6px 6px 0 0 !important;
+  font-weight: 500 !important;
+  padding: 0.4rem 0.9rem !important;
+  margin: 0 0.125rem 0 0 !important;
+  font-size: 0.9rem !important;
+  transform: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+}
+
+.panel-tabset .nav-tabs .nav-link.active {
+  /* Active state - fixed dimensions */
+  background-color: #00923f !important;
+  color: white !important;
+  border: 1px solid #00923f !important;
+  border-radius: 6px 6px 0 0 !important;
+  font-weight: 600 !important;
+  padding: 0.4rem 0.9rem !important;
+  margin: 0 0.125rem 0 0 !important;
+  font-size: 0.9rem !important;
+  transform: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+}
+
+.panel-tabset .nav-tabs .nav-link.active:hover {
+  /* ONLY darker background - everything else identical to active */
+  background-color: #007a35 !important;
+  color: white !important;
+  border: 1px solid #007a35 !important;
+  border-radius: 6px 6px 0 0 !important;
+  font-weight: 600 !important;
+  padding: 0.4rem 0.9rem !important;
+  margin: 0 0.125rem 0 0 !important;
+  font-size: 0.9rem !important;
+  transform: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+}
+
+/* Prevent focus outlines from changing size */
+.panel-tabset .nav-tabs .nav-link:focus,
+.panel-tabset .nav-tabs .nav-link:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Flag positioning in tabs */
+.panel-tabset .nav-tabs .nav-link img {
+  vertical-align: middle !important;
+  margin-right: 0.25rem !important;
+  width: 20px !important;
+  height: 15px !important;
+}
+
+/* Tab content styling - remove gray borders */
+.panel-tabset .tab-content {
+  background-color: transparent;
+  padding: 0.75rem 0;
+  border: none;
+}
+
+.panel-tabset .tab-pane {
+  animation: fadeIn 0.2s ease-in;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Minimal CV Section - No line, minimal spacing */
+.cv-section {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.cv-section h3 {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  margin-top: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* COMPLETELY LOCKED CV BUTTONS - ABSOLUTELY NO MOVEMENT */
+.cv-button {
+  /* Lock down all positioning and sizing properties */
+  display: inline-block !important;
+  position: relative !important;
+  width: auto !important;
+  height: 32px !important;
+  line-height: 30px !important;
+  padding: 0 0.8rem !important;
+  margin: 0 0.5rem 0 0 !important;
+
+  /* Typography - never change */
+  font-family: inherit !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  vertical-align: top !important;
+
+  /* Box model - never change */
+  box-sizing: border-box !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-radius: 4px !important;
+
+  /* Prevent all effects */
+  transition: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  /* Force consistent rendering */
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.cv-button.btn-outline-primary,
+.cv-button.btn-outline-primary:hover,
+.cv-button.btn-outline-primary:focus,
+.cv-button.btn-outline-primary:active {
+  /* Lock all properties - only background changes */
+  height: 32px !important;
+  line-height: 30px !important;
+  padding: 0 0.8rem 0 0.8rem !important;
+  margin: 0 0.5rem 0 0 !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  vertical-align: top !important;
+  transform: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.cv-button.btn-outline-primary {
+  background-color: transparent !important;
+  border-color: #00923f !important;
+  color: #00923f !important;
+}
+
+.cv-button.btn-outline-primary:hover {
+  background-color: #00923f !important;
+  border-color: #00923f !important;
+  color: white !important;
+}
+
+/* Remove any potential container borders */
+.panel-tabset .card,
+.panel-tabset .card-body {
+  border: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+/* About template customizations */
+.about-links .about-link {
+  color: #00923f;
+  text-decoration: none;
+}
+
+.about-links .about-link:hover {
+  color: #007a35;
+}
+
+/* Grid adjustments for better spacing */
+.grid {
+  margin-bottom: 1.5rem;
+}

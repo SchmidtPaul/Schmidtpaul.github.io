@@ -1,155 +1,208 @@
-pacman::p_load(fontawesome, formattable, googlesheets4, gtExtras, here, htmltools, kableExtra, tidyverse)
+pacman::p_load(
+  fontawesome,
+  formattable,
+  googlesheets4,
+  gt,
+  here,
+  htmltools,
+  tidyverse
+)
 
 token <- readRDS(".secrets/gs4_token.rds")
 gs4_auth(token = token)
 
 # get table ---------------------------------------------------------------
 sheet_url <- "https://docs.google.com/spreadsheets/d/1wSK6RiqaAWFqxaAd8VlXA4v0LQib0CevTopTAMFHzgs/edit?usp=sharing"
-# gs4_auth()
 raw <- read_sheet(sheet_url, sheet = "Main")
 
-workshops <- raw %>% 
+workshops <- raw %>%
   transmute(
     Time = Label_Time,
-    "Workshop Title" = Title,
+    Title = Title,
     Lang = Language,
     Plat = Platform,
     Location = Label_Location,
     Duration = as.integer(h),
     ID = ID
-  ) 
-
+  )
 
 # Evaluations -------------------------------------------------------------
-IDs_with_eval <- list.files(here::here("src", "eval"), ".pdf$") %>% 
-  str_remove(".pdf$") %>% 
+IDs_with_eval <- list.files(here::here("src", "eval"), ".pdf$") %>%
+  str_remove(".pdf$") %>%
   str_remove("eval_")
 
-workshops <- workshops %>% 
+workshops <- workshops %>%
   mutate(
-    `Workshop Title` = case_when(
-      ID %in% IDs_with_eval ~ str_c(`Workshop Title`, ' <a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/src/eval/eval_', ID,'.pdf" title="view evaluation" target="_blank" style="color: #00923f;"> ', as.character(fa("ranking-star")), '</a>'),
-      .default = `Workshop Title`
+    Title = case_when(
+      ID %in% IDs_with_eval ~
+        str_c(
+          Title,
+          ' <a href="https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/src/eval/eval_',
+          ID,
+          '.pdf" title="view evaluation" target="_blank" style="color: #00923f;"> ',
+          as.character(fa("ranking-star")),
+          '</a>'
+        ),
+      .default = Title
     )
-  ) %>% 
+  ) %>%
   select(-ID)
 
-
-# Flags -------------------------------------------------------------------
-flag_urls <- c(Ger = "https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/img/flag_ger.png?raw=true",
-               Eng = "https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/img/flag_usa.png?raw=true")
-
-imgs_flag <- unname(flag_urls[workshops$Lang])
-workshops$Lang <- ""
-
-
-# Zoom --------------------------------------------------------------------
-workshops <- workshops %>% 
-  mutate(Location = str_replace(Location, "zoom", "<img src='https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/img/logo_zoom.png?raw=true' style='width:30px; height:6px;'>")) 
-
-
-# Platform ----------------------------------------------------------------
-platform_urls <- c(R = "https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/img/logo_rstudio.png?raw=true",
-                   Python = "https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/img/logo_python.png?raw=true",
-                   SAS = "https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/img/logo_sas.png?raw=true")
-
-imgs_platform <- unname(platform_urls[workshops$Plat])
-workshops$Plat <- ""
-
-
-# Duration Bar ------------------------------------------------------------
+# Transform data to image filenames BEFORE creating GT table
 workshops <- workshops %>%
   mutate(
-    Dur_lab = str_c("> ", Duration, "h</span>"),
-    Dur_val = str_remove(Duration, "h") %>% as.integer(),
-  ) %>% 
-  mutate(
-    Duration = pmin(25, Dur_val) %>% 
-      color_bar("lightgrey")(.) %>% 
-      str_replace_all(">\\d+</span>", Dur_lab)
-  ) %>% 
-  mutate(Duration = case_when(
-    Dur_val > 24 ~ str_replace(Duration, "lightgrey", "darkgrey"),
-    .default = Duration
-  )) %>% 
-  select(-starts_with("Dur_"))
-
-# workshops
-
-workshops <- workshops %>%
-  kbl(align = c("r", "l", "r", "r", "r", "l"), escape = F) %>%
-  kable_minimal(
-    full_width = T,
-    font_size = 10,
-    bootstrap_options = c("hover", "condensed")
+    # Transform language codes to image filenames
+    Lang_img = case_when(
+      Lang == "Ger" ~ "flag_ger.png",
+      Lang == "Eng" ~ "flag_usa.png",
+      TRUE ~ Lang
+    ),
+    # Transform platform codes to image filenames
+    Plat_img = case_when(
+      Plat == "R" ~ "logo_rstudio.png",
+      Plat == "Python" ~ "logo_python.png",
+      Plat == "SAS" ~ "logo_sas.png",
+      TRUE ~ Plat
+    ),
+    # Store duration for bars
+    Duration_orig = Duration
   ) %>%
-  column_spec(1, width = "4em") %>%
-  column_spec(2, width = "26em") %>% 
-  column_spec(3, width = "2em",
-              image = spec_image(imgs_flag, 50, 50)) %>%
-  column_spec(4, width = "2em",
-              image = spec_image(imgs_platform, 50, 50)) %>% 
-  column_spec(5, width = "17em") %>%
-  column_spec(6, width = "4em")
+  # Replace original columns with image filename columns
+  select(-Lang, -Plat) %>%
+  rename(Lang = Lang_img, Plat = Plat_img)
 
-# workshops
+# Create GT table
+workshops_gt <- workshops %>%
+  gt() %>%
 
-# gt instead of kable -----------------------------------------------------
+  # Basic table options
+  tab_options(
+    table.font.size = px(12),
+    data_row.padding = px(3),
+    column_labels.padding = px(6),
+    table.border.top.style = "hidden",
+    table.border.bottom.style = "hidden",
+    column_labels.background.color = "white",
+    column_labels.font.weight = "bold",
+    column_labels.font.size = px(11),
+    row.striping.include_table_body = FALSE,
+    table_body.hlines.style = "hidden",
+    table_body.vlines.style = "hidden",
+    table.width = pct(100),
+    row.striping.background_color = "transparent",
+    table_body.hlines.color = "transparent",
+    table_body.vlines.color = "transparent",
+    table_body.border.top.color = "transparent",
+    table_body.border.bottom.color = "transparent"
+  ) %>%
 
-# # gt ----------------------------------------------------------------------
-# workshops <- raw %>%
-#   gt() %>% 
-#   tab_options(table_body.hlines.color = "transparent")
-# 
-# 
-# # Language ----------------------------------------------------------------
-# workshops <- workshops %>%
-#   text_transform(
-#     locations = cells_body(columns = Lang),
-#     fn = function(x) {
-#       x %>%
-#         str_replace("Eng", str_c(local_image(
-#           filename = here::here("img", "flag_usa.png"),
-#           height = 15
-#         ))) %>%
-#         str_replace("Ger", str_c(local_image(
-#           filename = here::here("img", "flag_ger.png"),
-#           height = 15
-#         )))
-#     }
-#   )
-# 
-# 
-# # Platform ----------------------------------------------------------------
-# workshops <- workshops %>%
-#   text_transform(
-#     locations = cells_body(columns = Plat),
-#     fn = function(x) {
-#       x %>%
-#         str_replace("R", str_c(local_image(
-#           filename = here::here("img", "logo_rstudio.png"),
-#           height = 15
-#         ))) %>%
-#         str_replace("Python", str_c(local_image(
-#           filename = here::here("img", "logo_python.png"),
-#           height = 15
-#         ))) %>% 
-#         str_replace("SAS", str_c(local_image(
-#           filename = here::here("img", "logo_sas.png"),
-#           height = 15
-#         )))
-#     }
-#   )
-# 
-# # Zoom logo ---------------------------------------------------------------
-# workshops <- workshops %>%
-#   text_transform(
-#     locations = cells_body(columns = Location),
-#     fn = function(x) {
-#       x %>%
-#         str_replace("zoom", str_c(local_image(
-#           filename = here::here("img", "logo_zoom.png"),
-#           height = 10
-#         )))
-#     }
-#   )
+  tab_style(
+    style = cell_fill(color = "white"),
+    locations = cells_body()
+  ) %>%
+
+  # Add gray line under column headers
+  tab_style(
+    style = cell_borders(
+      sides = "bottom",
+      color = "#dee2e6",
+      weight = px(1),
+      style = "solid"
+    ),
+    locations = cells_column_labels()
+  ) %>%
+
+  # Column labels
+  cols_label(
+    Time = "Time",
+    Title = "Workshop Title",
+    Lang = "Lang",
+    Plat = "Plat",
+    Location = "Location",
+    Duration = "Duration"
+  ) %>%
+
+  # Column widths
+  cols_width(
+    Time ~ px(70),
+    Title ~ px(350),
+    Lang ~ px(50),
+    Plat ~ px(50),
+    Location ~ px(280),
+    Duration ~ px(90)
+  ) %>%
+
+  # Column alignment
+  cols_align(
+    align = "left",
+    columns = c(Time, Title, Location)
+  ) %>%
+  cols_align(
+    align = "center",
+    columns = c(Lang, Plat, Duration)
+  ) %>%
+
+  # FORMAT IMAGES using fmt_image - the proper GT way!
+  fmt_image(
+    columns = Lang,
+    path = "img",
+    height = 15,
+    width = 20
+  ) %>%
+
+  fmt_image(
+    columns = Plat,
+    path = "img",
+    height = 20,
+    width = 20
+  ) %>%
+
+  # Transform location column - replace zoom with local image
+  text_transform(
+    locations = cells_body(columns = Location),
+    fn = function(x) {
+      str_replace_all(
+        x,
+        "zoom",
+        '<img src="img/logo_zoom.png" style="width:30px; height:6px; vertical-align: middle;">'
+      )
+    }
+  ) %>%
+
+  # Create duration bars using background styling
+  text_transform(
+    locations = cells_body(columns = Duration),
+    fn = function(x) {
+      duration_vals <- workshops$Duration_orig
+      map2_chr(
+        duration_vals,
+        duration_vals,
+        ~ {
+          # Calculate bar width percentage (max 24h = 100%)
+          bar_width <- pmin(100, (.x / 24) * 100)
+
+          # Choose color based on duration
+          bar_color <- if (.x > 24) "#a9a9a9" else "#d3d3d3"
+
+          # Create HTML with background gradient
+          glue::glue(
+            '<div style="background: linear-gradient(to right, {bar_color} {bar_width}%, transparent {bar_width}%); padding: 2px 4px; text-align: center; min-height: 20px; display: flex; align-items: center; justify-content: center;">{.x}h</div>'
+          )
+        }
+      )
+    }
+  ) %>%
+
+  # Enable HTML rendering for columns that need it
+  fmt_markdown(columns = c(Title, Location, Duration)) %>%
+
+  # Remove helper column
+  cols_hide(columns = Duration_orig) %>%
+
+  cols_move(
+    columns = c(Lang, Plat),
+    after = Title
+  )
+
+# Return the table
+workshops_gt

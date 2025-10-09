@@ -5,3 +5,9 @@
 
 # Ignore the secrets directory
 .secrets/
+
+/.quarto/
+
+**/*.quarto_ipynb
+
+/.luarc.json

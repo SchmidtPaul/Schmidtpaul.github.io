@@ -1,0 +1,34 @@
+---
+title: "Dr. Paul Schmidt's CV"
+author:
+  firstname: Dr. Paul
+  lastname: Schmidt
+  address: "Hamburg, Germany"
+  position: "Data Scientist / Biostatistician"
+  contacts:
+    - icon: fa envelope
+      text: schmidtpaul1989@outlook.com
+      url: "mailto:schmidtpaul1989@outlook.com"
+    - icon: fa brands linkedin
+      text: schmidtpaul1989
+      url: "https://www.linkedin.com/in/schmidtpaul1989/"
+    - icon: fa brands github
+      text: SchmidtPaul
+      url: "https://github.com/SchmidtPaul/"
+
+format: typst
+---
+
+# Professional Experience
+
+**Managing Director** | BioMath GmbH | Hamburg, Germany | 2020 - Present
+
+- Led data science projects in life sciences
+- Developed R and Python workflows
+
+# Education
+
+**PhD in Biostatistics** | University of Hohenheim | 2019
+
+- Thesis on experimental design and analysis
+

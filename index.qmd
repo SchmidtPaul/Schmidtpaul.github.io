@@ -1,0 +1,114 @@
+---
+title: "Dr. Paul Schmidt"
+subtitle: "Data Scientist in Life Sciences"
+image: img/paulzoomcircle.png
+image-shape: round
+image-width: 12em
+
+about:
+  template: trestles
+  image-width: 12em
+  image-shape: round
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:schmidtpaul1989@outlook.com
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/schmidtpaul1989/
+    - icon: github
+      text: GitHub
+      href: https://github.com/SchmidtPaul/
+    - icon: pencil-square
+      text: ResearchGate
+      href: https://www.researchgate.net/profile/Paul_Schmidt17
+    - icon: house-fill
+      text: Hamburg, Germany
+      href: "#"
+---
+
+```{r setup}
+#| echo: false
+#| warning: false
+#| message: false
+#| results: 'hide'
+
+options(knitr.kable.NA = '')
+pacman::p_load(kableExtra, formattable, here, htmltools, readxl, tidyverse)
+```
+
+## About Me
+
+::: {.panel-tabset}
+
+### ![](img/flag_usa.png){width="20" height="15"} English
+
+I completed [my **PhD** in **biostatistics**](https://opus.uni-hohenheim.de/volltexte/2020/1720/) at the University of Hohenheim in 2019 and have since been working at [<img src="/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/> BioMath](https://www.biomath.de/), where I am now Managing Director. Over the past years, I have led numerous projects in statistics and data science for public institutions and private companies, developing R and Python workflows and creating Quarto-based reporting pipelines[^1]. Several of these projects have also resulted in publications[^2]. In addition, I serve as Deputy Speaker of the [Working Group on Agricultural Experimentation](https://www.biometrische-gesellschaft.de/arbeitsgruppen/landwirtschaftliches-versuchswesen.html) of the German Region of the International Biometric Society and regularly teach **R and Python workshops** for beginners and advanced users (see table below).
+
+I like when complicated methods are explained well, when results are presented in a concise yet beautiful manner and when R does its magic.
+
+[^1]: Examples are available on my [GitHub](https://github.com/) (link below photo).
+[^2]: A list of publications can be found on my [ResearchGate](https://www.researchgate.net/profile/) (link below photo).
+
+::: {.cv-section}
+### {{< fa file-pdf >}} Curriculum Vitae
+
+[{{< fa download >}} Download](https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CVeng.pdf){.btn .btn-outline-primary .cv-button target="_blank"}
+[{{< fa eye >}} View Online](https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CVeng.pdf){.btn .btn-outline-primary .cv-button target="_blank"}
+:::
+
+### ![](img/flag_ger.png){width="20" height="15"} German
+
+Ich habe 2019 [meine **Promotion**](https://opus.uni-hohenheim.de/volltexte/2020/1720/) im Fachgebiet **Biostatistik** an der Universität Hohenheim abgeschlossen und bin seitdem bei [<img src="/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/> BioMath](https://www.biomath.de/) tätig, wo ich inzwischen als Geschäftsführer arbeite. In den vergangenen Jahren habe ich zahlreiche Projekte in Statistik und Data Science für öffentliche Institutionen und Unternehmen geleitet, **R- und Python-Workflows** entwickelt und **Quarto-basierte Reporting-Pipelines** aufgebaut[^3]. Mehrere dieser Projekte haben auch zu **Publikationen** geführt[^4]. Außerdem bin ich stellvertretender Sprecher der [AG Landwirtschaftliches Versuchswesen](https://www.biometrische-gesellschaft.de/arbeitsgruppen/landwirtschaftliches-versuchswesen.html) der Deutschen Region der Internationalen Biometrischen Gesellschaft und gebe regelmäßig **Workshops** in R und Python für Einsteiger und Fortgeschrittene (siehe Tabelle unten).
+
+Ich mag es, wenn komplizierte Methoden verständlich erklärt werden, wenn Ergebnisse prägnant und anschaulich präsentiert werden und wenn R seine Magie entfaltet.
+
+[^3]: Beispiele finden sich auf meinem [GitHub](https://github.com/) (Link unter dem Foto).
+[^4]: Eine Liste von Publikationen ist auf meinem [ResearchGate](https://www.researchgate.net/profile/) verfügbar (Link unter dem Foto).
+
+::: {.cv-section}
+### {{< fa file-pdf >}} Lebenslauf
+
+[{{< fa download >}} Download](https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CVger.pdf){.btn .btn-outline-primary .cv-button target="_blank"}
+[{{< fa eye >}} Online ansehen](https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CVger.pdf){.btn .btn-outline-primary .cv-button target="_blank"}
+:::
+
+:::
+
+---
+
+## Projects
+
+- <img src="https://github.com/SchmidtPaul/dsfair_quarto/blob/master/img/favicon-32x32.png?raw=true" width=16 height=16/> [DSFAIR - Data Science for Agriculture in R](https://schmidtpaul.github.io/dsfair_quarto/)
+- {{< fa chart-line >}} [Data Viz Showcase](https://github.com/SchmidtPaul/DataVizShowcase?tab=readme-ov-file#--data-viz-showcase)
+- <img src="https://raw.githubusercontent.com/SchmidtPaul/BioMathR/main/docs/favicon-32x32.png" width=16 height=16/> [BioMathR: Utility functions used at BioMath](https://schmidtpaul.github.io/BioMathR/)
+- <img src="https://raw.githubusercontent.com/SchmidtPaul/CitaviR/master/docs/favicon-32x32.png" width=16 height=16/> [CitaviR: A set of tools for dealing with Citavi data](https://schmidtpaul.github.io/CitaviR/)
+- <img src="https://raw.githubusercontent.com/SchmidtPaul/sankeyD3plus/main/docs/favicon-32x32.png" width=16 height=16/> [sankeyD3plus: D3 JavaScript Sankey diagrams in R](https://schmidtpaul.github.io/sankeyD3plus/)
+
+---
+
+## Workshops
+
+Below is a list of workshops given by me. Clicking on the {{< fa ranking-star >}} symbol links to the workshop's evaluation. More info on participating in or booking a workshop is below the table.
+
+```{r}
+#| label: workshop-table
+#| echo: false
+#| warning: false
+#| message: false
+
+source(here::here("src", "get workshop table.R"))
+workshops_gt
+```
+
+::: {.panel-tabset}
+
+### ![](img/flag_usa.png){width="20" height="15"} Booking a Workshop
+
+Currently, I do not organize workshops that are open for general registration (with one exception). All my workshops are arranged through universities or other institutions that engage me to deliver tailored content based on their specific needs. Therefore, I encourage you to reach out to me and/or the appropriate contact at your institution to discuss potential arrangements. The exception to this is the German E-Learning Workshop that can be booked at any time: [Datenanalyse mit Python](https://biomath.de/services/datenanalyse-mit-python-e-learning-kurs/).
+
+### ![](img/flag_ger.png){width="20" height="15"} Buchung eines Workshops
+
+Aktuell organisiere ich fast keine Workshops, die für eine allgemeine Registrierung geöffnet sind. Alle meine Workshops werden über Universitäten oder andere Institutionen organisiert, die mich engagieren, um Inhalte basierend auf ihren spezifischen Bedürfnissen zu vermitteln. Daher wäre ich dankbar, wenn Sie mich oder den zuständigen Ansprechpartner an Ihrer Institution kontaktieren würden, um mögliche Vereinbarungen zu besprechen. Die Ausnahme bildet der jederzeit buchbare, deutsche E-Learning-Workshop: [Datenanalyse mit Python](https://biomath.de/services/datenanalyse-mit-python-e-learning-kurs/).
+
+:::

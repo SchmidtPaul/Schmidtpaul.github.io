@@ -1,0 +1,76 @@
+---
+title: "Dr. Paul Schmidt's CV"
+author:
+  firstname: Dr. Paul
+  lastname: Schmidt
+  address: "Hamburg, Germany"
+  position: "Data Scientist / Biostatistician"
+  contacts:
+    - icon: fa envelope
+      text: schmidtpaul1989@outlook.com
+      url: "mailto:schmidtpaul1989@outlook.com"
+    - icon: fa phone
+      text: +49 172 3091577
+      url: "tel:+491723091577"
+    - icon: fa brands linkedin
+      text: schmidtpaul1989
+      url: "https://www.linkedin.com/in/schmidtpaul1989/"
+    - icon: fa brands github
+      text: SchmidtPaul
+      url: "https://github.com/SchmidtPaul/"
+    - icon: fa pencil-square
+      text: ResearchGate
+      url: "https://www.researchgate.net/profile/Paul_Schmidt17"
+
+format: typst
+keep-typ: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+pacman::p_load(here, tidyverse, typstcv)
+source(here::here("CV", "CVhelper-typst.R"))
+```
+
+# Professional Experience
+
+```{r}
+#| output: asis
+
+d$job$eng |>
+  resume_entry(
+    title = "role",
+    location = "loc", 
+    date = "dates",
+    description = "company"
+  )
+```
+
+# Education
+
+```{r}
+#| output: asis
+
+d$edu$eng |>
+  resume_entry(
+    title = "degree",
+    location = "loc",
+    date = "dates", 
+    description = "uni"
+  )
+```
+
+# Skills
+
+*TO BE IMPLEMENTED*
+
+# Scientific Publications
+
+*TO BE IMPLEMENTED*
+
+# Workshops
+
+*TO BE IMPLEMENTED*
+

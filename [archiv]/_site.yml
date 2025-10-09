@@ -1,0 +1,16 @@
+name: "Paul Schmidt"
+output_dir: "docs"
+
+# navbar:
+#   title: "Paul Schmidt"
+
+output:
+  html_document:
+    theme: lumen
+    # code_folding: show
+    highlight: tango
+    toc: true
+    toc_float: true
+    # number_sections: true
+    css: 'styles.css'
+

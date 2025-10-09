@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "index.qmd"
+  resources:
+    - "CV/"
+    - "src/"
+    - "img/"
+
+website:
+  title: "Dr. Paul Schmidt"
+  site-url: "https://schmidtpaul.github.io/"
+  favicon: "img/Banner/images/BioMathfavicon-32x32.png"
+
+execute:
+  freeze: auto
+
+format:
+  html:
+    theme: lumen
+    css: src/styles.css
+    toc: false
+    include-in-header: src/header.html
+    include-after-body: src/footer.html
+    grid:
+      body-width: 1200px
+      sidebar-width: 250px
+      margin-width: 250px
