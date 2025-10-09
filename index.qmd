@@ -24,7 +24,7 @@ about:
       href: https://www.researchgate.net/profile/Paul_Schmidt17
     - icon: house-fill
       text: Hamburg, Germany
-      href: "#"
+      href: https://www.biomath.de/about-us/contact/
 ---
 
 ```{r setup}

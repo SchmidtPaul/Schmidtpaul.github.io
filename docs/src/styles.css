@@ -296,12 +296,12 @@ a:link, a:visited, a:hover, a:active {
 
 /* About template customizations */
 .about-links .about-link {
-  color: #00923f;
+  color: #00923f !important;
   text-decoration: none;
 }
 
 .about-links .about-link:hover {
-  color: #007a35;
+  color: #007a35 !important;
 }
 
 /* Grid adjustments for better spacing */
