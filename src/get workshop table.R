@@ -48,28 +48,30 @@ workshops <- workshops %>%
   ) %>%
   select(-ID)
 
-# Transform data to image filenames BEFORE creating GT table
+# Transform data - use iconify shortcodes for both language and platform
 workshops <- workshops %>%
   mutate(
-    # Transform language codes to image filenames
-    Lang_img = case_when(
-      Lang == "Ger" ~ "flag_ger.png",
-      Lang == "Eng" ~ "flag_usa.png",
+    # Transform language codes to iconify flag shortcodes (square flags)
+    Lang_iconify = case_when(
+      Lang == "Ger" ~ '{{< iconify circle-flags:de size=xl >}}',
+      Lang == "Eng" ~ '{{< iconify circle-flags:us size=xl >}}',
       TRUE ~ Lang
     ),
-    # Transform platform codes to image filenames
-    Plat_img = case_when(
-      Plat == "R" ~ "logo_rstudio.png",
-      Plat == "Python" ~ "logo_python.png",
-      Plat == "SAS" ~ "logo_sas.png",
+    # Transform platform codes to Font Awesome shortcodes with links and larger size
+    Plat_fa = case_when(
+      Plat == "R" ~
+        '[{{< fa brands r-project size=xl >}}](https://www.r-project.org/)',
+      Plat == "Python" ~
+        '[{{< fa brands python size=xl >}}](https://www.python.org/)',
+      Plat == "SAS" ~ '[{{< fa chart-simple size=xl >}}](https://www.sas.com/)',
       TRUE ~ Plat
     ),
     # Store duration for bars
     Duration_orig = Duration
   ) %>%
-  # Replace original columns with image filename columns
+  # Replace original columns with transformed versions
   select(-Lang, -Plat) %>%
-  rename(Lang = Lang_img, Plat = Plat_img)
+  rename(Lang = Lang_iconify, Plat = Plat_fa)
 
 # Create GT table
 workshops_gt <- workshops %>%
@@ -122,6 +124,12 @@ workshops_gt <- workshops %>%
     Duration = "Duration"
   ) %>%
 
+  # Reorder columns: Time, Title, Lang, Plat, Location, Duration
+  cols_move(
+    columns = c(Lang, Plat),
+    after = Title
+  ) %>%
+
   # Column widths
   cols_width(
     Time ~ px(70),
@@ -140,21 +148,6 @@ workshops_gt <- workshops %>%
   cols_align(
     align = "center",
     columns = c(Lang, Plat, Duration)
-  ) %>%
-
-  # FORMAT IMAGES using fmt_image - the proper GT way!
-  fmt_image(
-    columns = Lang,
-    path = "img",
-    height = 15,
-    width = 20
-  ) %>%
-
-  fmt_image(
-    columns = Plat,
-    path = "img",
-    height = 20,
-    width = 20
   ) %>%
 
   # Transform location column - replace zoom with local image
@@ -194,15 +187,7 @@ workshops_gt <- workshops %>%
   ) %>%
 
   # Enable HTML rendering for columns that need it
-  fmt_markdown(columns = c(Title, Location, Duration)) %>%
+  fmt_markdown(columns = c(Title, Lang, Plat, Location, Duration)) %>%
 
   # Remove helper column
-  cols_hide(columns = Duration_orig) %>%
-
-  cols_move(
-    columns = c(Lang, Plat),
-    after = Title
-  )
-
-# Return the table
-workshops_gt
+  cols_hide(columns = Duration_orig)
