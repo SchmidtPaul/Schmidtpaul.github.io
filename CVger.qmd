@@ -40,8 +40,8 @@ brand:
     awesomecv-typst:
       font-header: Arial # Roboto
 profile-photo: "img/paulzoomcircle.png"
-bibliography: "CV/publications.bib"
-csl: src/apa.csl
+bibliography: "CV/citavi_publications.bib"
+# csl: src/apa.csl
 link-citations: true
 citeproc: true
 nocite: '@*'
@@ -85,7 +85,7 @@ cv_emit_skills("ger")
 cv_emit_workshops()
 ```
 
-# Wissenschaftliche Publikationen
+# Publikationen
 
 ::: {#refs}
 :::
