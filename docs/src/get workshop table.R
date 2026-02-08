@@ -1,28 +1,47 @@
 pacman::p_load(
   fontawesome,
   formattable,
-  googlesheets4,
   gt,
   here,
   htmltools,
-  tidyverse
+  tidyverse,
+  yaml
 )
 
-token <- readRDS(".secrets/gs4_token.rds")
-gs4_auth(token = token)
+# get table from YAML -----------------------------------------------------
+yaml_path <- "C:/GitHub/workshop-management/workshops.yml"
+raw_yaml <- yaml::read_yaml(yaml_path)
 
-# get table ---------------------------------------------------------------
-sheet_url <- "https://docs.google.com/spreadsheets/d/1wSK6RiqaAWFqxaAd8VlXA4v0LQib0CevTopTAMFHzgs/edit?usp=sharing"
-raw <- read_sheet(sheet_url, sheet = "Main")
+raw <- map_dfr(raw_yaml$workshops, function(ws) {
+  tibble(
+    ID = ws$id %||% NA_character_,
+    Title = ws$title %||% NA_character_,
+    Language = ws$language %||% NA_character_,
+    Platform = ws$platform %||% NA_character_,
+    client = ws$client %||% NA_character_,
+    location = ws$location %||% NA_character_,
+    date_from = ws$date_from %||% NA_character_,
+    hours = ws$hours %||% NA_real_
+  )
+})
 
+# Derive label fields (previously computed in Google Sheets)
 workshops <- raw %>%
   transmute(
-    Time = Label_Time,
+    Time = case_when(
+      !is.na(date_from) ~ format(as.Date(date_from), "%Y %b"),
+      .default = NA_character_
+    ),
     Title = Title,
     Lang = Language,
     Plat = Platform,
-    Location = Label_Location,
-    Duration = as.integer(h),
+    Location = case_when(
+      !is.na(client) & !is.na(location) & location != client ~
+        paste(client, "via", location),
+      !is.na(client) ~ client,
+      .default = NA_character_
+    ),
+    Duration = as.integer(hours),
     ID = ID
   )
 

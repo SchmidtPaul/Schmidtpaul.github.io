@@ -10,7 +10,7 @@ library(stringr)
 library(purrr)
 library(here)
 library(tibble)
-library(googlesheets4)
+library(yaml)
 
 # -------------------- Import aus Excel --------------------
 xlsx_path <- here("CV", "CVcontent.xlsx")
@@ -120,52 +120,35 @@ for (LANG in langs) {
 # -------------------- Publications-Pfad --------------------
 cv$pub_path <- here("CV", "publications.bib")
 
-# -------------------- Workshops aus Google Sheets --------------------
-# ---- Workshops-Import (drop-in für deinen CVhelper-typst.R) ------------------
-library(googlesheets4)
+# -------------------- Workshops aus YAML --------------------
+yaml_path <- "C:/GitHub/workshop-management/workshops.yml"
+raw_yaml <- yaml::read_yaml(yaml_path)
 
-# 1) Auth wie früher
-token <- readRDS(here::here(".secrets", "gs4_token.rds"))
-gs4_auth(token = token)
-
-# 2) Einlesen genau wie in deinem Snippet – mit robustem col_select
-sheet_url <- "https://docs.google.com/spreadsheets/d/1wSK6RiqaAWFqxaAd8VlXA4v0LQib0CevTopTAMFHzgs/edit?usp=sharing"
-
-cols_wanted <- c("Title", "Label_Location", "Label_h", "Label_Time")
-
-ws <- tryCatch(
-  read_sheet(
-    sheet_url,
-    col_select = all_of(cols_wanted) # nur diese 4 Spalten laden
-  ),
-  error = function(e) {
-    # Fallback: ohne col_select (falls Sheet-Struktur/Zugriff anders ist)
-    read_sheet(sheet_url)
+cv$workshops <- map_dfr(raw_yaml$workshops, function(ws) {
+  date_from <- ws$date_from %||% NA_character_
+  label_time <- if (!is.na(date_from)) format(as.Date(date_from), "%Y %b") else ""
+  client <- ws$client %||% ""
+  loc <- ws$location %||% ""
+  label_location <- if (loc != "" && loc != client) {
+    paste(client, "via", loc)
+  } else {
+    client
   }
-)
-
-# 3) Auf deine Zielnamen abbilden; 'date' bleibt 1:1 der Zeichenstring aus dem Sheet
-cv$workshops <- ws %>%
-  select(
-    Title,
-    Location = any_of("Label_Location"),
-    Duration = any_of("Label_h"),
-    Time = any_of("Label_Time")
-  ) %>%
-  transmute(
-    title = Title,
-    location = coalesce(Location, ""),
-    date = coalesce(Time, "") # unverändert, kein Parsen
+  tibble(
+    title = ws$title %||% NA_character_,
+    location = label_location,
+    date = label_time
   )
+})
 
-# 4) Gruppierung pro Jahr (nur für Darstellung), Datumsstring bleibt unverändert
+# Gruppierung pro Jahr (nur für Darstellung)
 if (nrow(cv$workshops) > 0) {
   cv$workshops_wide <- cv$workshops %>%
     mutate(
       year = substr(date, 1, 4),
-      detail = paste0(date, " — ", title, " — ", location) # datum bleibt 1:1
+      detail = paste0(date, " — ", title, " — ", location)
     ) %>%
-    group_by(year) %>% # behält die Originalreihenfolge je Jahr
+    group_by(year) %>%
     mutate(detail_id = paste0("detail", row_number())) %>%
     ungroup() %>%
     select(year, detail_id, detail) %>%
