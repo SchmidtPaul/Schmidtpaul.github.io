@@ -18,7 +18,7 @@
     "href": "index.html#projects",
     "title": "Dr. Paul Schmidt",
     "section": "Projects",
-    "text": "Projects\n\n DSFAIR - Data Science for Agriculture in R\n Data Viz Showcase\n BioMathR: Utility functions used at BioMath\n CitaviR: A set of tools for dealing with Citavi data\n sankeyD3plus: D3 JavaScript Sankey diagrams in R"
+    "text": "Projects\n\n BioMath Content - Data Science for Agriculture in R\n Data Viz Showcase\n BioMathR: Utility functions used at BioMath\n CitaviR: A set of tools for dealing with Citavi data\n sankeyD3plus: D3 JavaScript Sankey diagrams in R"
   },
   {
     "objectID": "index.html#workshops",
@@ -32,6 +32,6 @@
     "href": "index.html#footnotes",
     "title": "Dr. Paul Schmidt",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nFull text available here↩︎\nExamples are available on my GitHub (link below photo).↩︎\nA list of publications can be found on my ResearchGate (link below photo).↩︎\nMore here↩︎\nVolltext hier verfügbar↩︎\nBeispiele finden sich auf meinem GitHub (Link unter dem Foto).↩︎\nEine Liste von Publikationen ist auf meinem ResearchGate verfügbar (Link unter dem Foto).↩︎\nMehr hier↩︎"
+    "text": "Footnotes\n\n\nFull text available here↩︎\nExamples are available on my GitHub.↩︎\nA list of publications can be found on my ResearchGate.↩︎\nMore here↩︎\nVolltext hier verfügbar↩︎\nBeispiele finden sich auf meinem GitHub.↩︎\nEine Liste von Publikationen ist auf meinem ResearchGate verfügbar.↩︎\nMehr hier↩︎"
   }
 ]
