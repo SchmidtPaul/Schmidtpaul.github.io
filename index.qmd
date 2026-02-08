@@ -48,8 +48,8 @@ I completed my PhD in biostatistics[^1] at the University of Hohenheim in 2019 a
 I like when complicated methods are explained well, when results are presented in a concise yet beautiful manner and when R does its magic.
 
 [^1]: Full text available [here](https://opus.uni-hohenheim.de/volltexte/2020/1720/)
-[^2]: Examples are available on my [GitHub](https://github.com/) (link below photo).
-[^3]: A list of publications can be found on my [ResearchGate](https://www.researchgate.net/profile/) (link below photo).
+[^2]: Examples are available on my [GitHub](https://github.com/SchmidtPaul/).
+[^3]: A list of publications can be found on my [ResearchGate](https://www.researchgate.net/profile/Paul-Schmidt-16).
 [^4]: [More here](https://www.biometrische-gesellschaft.de/arbeitsgruppen/landwirtschaftliches-versuchswesen.html)
 
 ::: {.cv-section}
@@ -66,8 +66,8 @@ Ich habe 2019 meine Promotion[^5] im Fachgebiet Biostatistik an der Universität
 Ich mag es, wenn komplizierte Methoden verständlich erklärt werden, wenn Ergebnisse prägnant und anschaulich präsentiert werden und wenn R seine Magie entfaltet.
 
 [^5]: [Volltext hier verfügbar](https://opus.uni-hohenheim.de/volltexte/2020/1720/)
-[^6]: Beispiele finden sich auf meinem [GitHub](https://github.com/) (Link unter dem Foto).
-[^7]: Eine Liste von Publikationen ist auf meinem [ResearchGate](https://www.researchgate.net/profile/) verfügbar (Link unter dem Foto).
+[^6]: Beispiele finden sich auf meinem [GitHub](https://github.com/SchmidtPaul/).
+[^7]: Eine Liste von Publikationen ist auf meinem [ResearchGate](https://www.researchgate.net/profile/Paul-Schmidt-16) verfügbar.
 [^8]: [Mehr hier](https://www.biometrische-gesellschaft.de/arbeitsgruppen/landwirtschaftliches-versuchswesen.html)
 
 ::: {.cv-section}
@@ -83,7 +83,7 @@ Ich mag es, wenn komplizierte Methoden verständlich erklärt werden, wenn Ergeb
 
 ## Projects
 
-- <img src="https://github.com/SchmidtPaul/dsfair_quarto/blob/master/img/favicon-32x32.png?raw=true" width=16 height=16/> [DSFAIR - Data Science for Agriculture in R](https://schmidtpaul.github.io/dsfair_quarto/)
+- <img src="https://biomathcontent.netlify.app/img/logo/biomath_logo2025_green_512x512.png" width=16 height=16/> [BioMath Content - Data Science for Agriculture in R](https://biomathcontent.netlify.app/)
 - {{< fa chart-line >}} [Data Viz Showcase](https://github.com/SchmidtPaul/DataVizShowcase?tab=readme-ov-file#--data-viz-showcase)
 - <img src="https://raw.githubusercontent.com/SchmidtPaul/BioMathR/main/docs/favicon-32x32.png" width=16 height=16/> [BioMathR: Utility functions used at BioMath](https://schmidtpaul.github.io/BioMathR/)
 - <img src="https://raw.githubusercontent.com/SchmidtPaul/CitaviR/master/docs/favicon-32x32.png" width=16 height=16/> [CitaviR: A set of tools for dealing with Citavi data](https://schmidtpaul.github.io/CitaviR/)
