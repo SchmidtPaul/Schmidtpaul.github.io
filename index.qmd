@@ -21,7 +21,7 @@ about:
       href: https://github.com/SchmidtPaul/
     - icon: pencil-square
       text: ResearchGate
-      href: https://www.researchgate.net/profile/Paul_Schmidt17
+      href: https://www.researchgate.net/profile/Paul-Schmidt-16?ev=hdr_xprf
     - icon: house-fill
       text: Hamburg, Germany
       href: https://www.biomath.de/about-us/contact/
@@ -55,7 +55,6 @@ I like when complicated methods are explained well, when results are presented i
 ::: {.cv-section}
 ### {{< fa file-pdf >}} Curriculum Vitae
 
-[{{< fa download >}} Download](https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CVeng.pdf){.btn .btn-outline-primary .cv-button target="_blank"}
 [{{< fa eye >}} View Online](https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CVeng.pdf){.btn .btn-outline-primary .cv-button target="_blank"}
 :::
 
@@ -73,7 +72,6 @@ Ich mag es, wenn komplizierte Methoden verständlich erklärt werden, wenn Ergeb
 ::: {.cv-section}
 ### {{< fa file-pdf >}} Lebenslauf
 
-[{{< fa download >}} Download](https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CVger.pdf){.btn .btn-outline-primary .cv-button target="_blank"}
 [{{< fa eye >}} Online ansehen](https://github.com/SchmidtPaul/Schmidtpaul.github.io/blob/main/CVger.pdf){.btn .btn-outline-primary .cv-button target="_blank"}
 :::
 
@@ -83,7 +81,7 @@ Ich mag es, wenn komplizierte Methoden verständlich erklärt werden, wenn Ergeb
 
 ## Projects
 
-- <img src="https://biomathcontent.netlify.app/img/logo/biomath_logo2025_green_512x512.png" width=16 height=16/> [BioMath Content - Data Science for Agriculture in R](https://biomathcontent.netlify.app/)
+- <img src="https://biomathcontent.netlify.app/img/logo/biomath_logo2025_green_512x512.png" width=16 height=16/> [BioMath Content - A knowledge hub for R, Python, and applied data science](https://biomathcontent.netlify.app/)
 - {{< fa chart-line >}} [Data Viz Showcase](https://github.com/SchmidtPaul/DataVizShowcase?tab=readme-ov-file#--data-viz-showcase)
 - <img src="https://raw.githubusercontent.com/SchmidtPaul/BioMathR/main/docs/favicon-32x32.png" width=16 height=16/> [BioMathR: Utility functions used at BioMath](https://schmidtpaul.github.io/BioMathR/)
 - <img src="https://raw.githubusercontent.com/SchmidtPaul/CitaviR/master/docs/favicon-32x32.png" width=16 height=16/> [CitaviR: A set of tools for dealing with Citavi data](https://schmidtpaul.github.io/CitaviR/)
