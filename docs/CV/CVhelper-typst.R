@@ -10,7 +10,7 @@ library(stringr)
 library(purrr)
 library(here)
 library(tibble)
-library(yaml)
+library(googlesheets4)
 
 # -------------------- Import aus Excel --------------------
 xlsx_path <- here("CV", "CVcontent.xlsx")
@@ -120,26 +120,22 @@ for (LANG in langs) {
 # -------------------- Publications-Pfad --------------------
 cv$pub_path <- here("CV", "publications.bib")
 
-# -------------------- Workshops aus YAML --------------------
-yaml_path <- "C:/GitHub/workshop-management/workshops.yml"
-raw_yaml <- yaml::read_yaml(yaml_path)
+# -------------------- Workshops aus Google Sheets --------------------
+library(googlesheets4)
 
-cv$workshops <- map_dfr(raw_yaml$workshops, function(ws) {
-  date_from <- ws$date_from %||% NA_character_
-  label_time <- if (!is.na(date_from)) format(as.Date(date_from), "%Y %b") else ""
-  client <- ws$client %||% ""
-  loc <- ws$location %||% ""
-  label_location <- if (loc != "" && loc != client) {
-    paste(client, "via", loc)
-  } else {
-    client
-  }
-  tibble(
-    title = ws$title %||% NA_character_,
-    location = label_location,
-    date = label_time
+token <- readRDS(here::here(".secrets", "gs4_token.rds"))
+gs4_auth(token = token)
+
+sheet_url <- "https://docs.google.com/spreadsheets/d/1wSK6RiqaAWFqxaAd8VlXA4v0LQib0CevTopTAMFHzgs/edit?usp=sharing"
+
+ws <- read_sheet(sheet_url, sheet = "Main")
+
+cv$workshops <- ws %>%
+  transmute(
+    title = Title,
+    location = coalesce(Label_Location, ""),
+    date = coalesce(Label_Time, "")
   )
-})
 
 # Gruppierung pro Jahr (nur für Darstellung)
 if (nrow(cv$workshops) > 0) {
