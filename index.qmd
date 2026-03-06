@@ -91,7 +91,7 @@ Ich mag es, wenn komplizierte Methoden verständlich erklärt werden, wenn Ergeb
 
 ## Workshops
 
-Below is a list of workshops given by me. Clicking on the {{< fa ranking-star >}} symbol links to the workshop's evaluation. More info on participating in or booking a workshop is below the table.
+Below is a list of workshops given by me. Clicking on the [{{< fa ranking-star >}}]{style="color: #00923f;"} symbol links to the workshop's evaluation. More info on participating in or booking a workshop is below the table.
 
 ```{r}
 #| label: workshop-table

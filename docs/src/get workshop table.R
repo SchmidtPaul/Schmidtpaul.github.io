@@ -63,7 +63,7 @@ workshops <- workshops %>%
         '[{{< fa brands r-project size=xl >}}](https://www.r-project.org/)',
       Plat == "Python" ~
         '[{{< fa brands python size=xl >}}](https://www.python.org/)',
-      Plat == "SAS" ~ '[{{< fa chart-simple size=xl >}}](https://www.sas.com/)',
+      Plat == "SAS" ~ '<a href="https://www.sas.com/"><img src="img/logo_sas.png" style="width:20px; height:20px; vertical-align: middle; filter: hue-rotate(-90deg);"></a>',
       TRUE ~ Plat
     ),
     # Store duration for bars
@@ -188,6 +188,9 @@ workshops_gt <- workshops %>%
 
   # Enable HTML rendering for columns that need it
   fmt_markdown(columns = c(Title, Lang, Plat, Location, Duration)) %>%
+
+  # Replace NA with empty string
+  sub_missing(columns = everything(), missing_text = "") %>%
 
   # Remove helper column
   cols_hide(columns = Duration_orig)
