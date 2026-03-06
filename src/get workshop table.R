@@ -21,6 +21,7 @@ workshops <- raw %>%
     Title = Title,
     Lang = Language,
     Plat = Platform,
+    Org = Firma,
     Location = Label_Location,
     Duration = as.integer(h),
     ID = ID
@@ -51,27 +52,34 @@ workshops <- workshops %>%
 # Transform data - use iconify shortcodes for both language and platform
 workshops <- workshops %>%
   mutate(
-    # Transform language codes to iconify flag shortcodes (square flags)
+    # Transform language codes to flag images with tooltips
     Lang_iconify = case_when(
-      Lang == "Ger" ~ '{{< iconify circle-flags:de size=xl >}}',
-      Lang == "Eng" ~ '{{< iconify circle-flags:us size=xl >}}',
+      Lang == "Ger" ~ '<img src="img/flag_ger.png" title="German" style="width:22px; vertical-align: middle;">',
+      Lang == "Eng" ~ '<img src="img/flag_usa.png" title="English" style="width:22px; vertical-align: middle;">',
       TRUE ~ Lang
     ),
-    # Transform platform codes to Font Awesome shortcodes with links and larger size
+    # Transform platform codes to icons with tooltips and links
     Plat_fa = case_when(
       Plat == "R" ~
-        '[{{< fa brands r-project size=xl >}}](https://www.r-project.org/)',
+        '<a title="R" href="https://www.r-project.org/">{{< fa brands r-project size=xl >}}</a>',
       Plat == "Python" ~
-        '[{{< fa brands python size=xl >}}](https://www.python.org/)',
-      Plat == "SAS" ~ '<a href="https://www.sas.com/"><img src="img/logo_sas.png" style="width:20px; height:20px; vertical-align: middle; filter: hue-rotate(-90deg);"></a>',
+        '<a title="Python" href="https://www.python.org/">{{< fa brands python size=xl >}}</a>',
+      Plat == "SAS" ~ '<a title="SAS" href="https://www.sas.com/"><img src="img/logo_sas.png" style="width:20px; height:20px; vertical-align: middle; filter: hue-rotate(-90deg);"></a>',
       TRUE ~ Plat
+    ),
+    # Transform org/firma to icon with tooltip and link
+    Org_icon = case_when(
+      Org == "BioMath" ~ '<a title="BioMath" href="https://www.biomath.de/"><img src="img/logo_biomath.png" style="width:20px; height:20px; vertical-align: middle;"></a>',
+      Org == "Paul" ~ '<img src="img/logo_ps.svg" title="Freelance" style="width:24px; height:24px; vertical-align: middle;">',
+      Org == "Hohenheim" ~ '<a title="Uni Hohenheim" href="https://www.uni-hohenheim.de/"><img src="img/logo_hohenheim.svg" style="width:20px; height:20px; vertical-align: middle; "></a>',
+      TRUE ~ Org
     ),
     # Store duration for bars
     Duration_orig = Duration
   ) %>%
   # Replace original columns with transformed versions
-  select(-Lang, -Plat) %>%
-  rename(Lang = Lang_iconify, Plat = Plat_fa)
+  select(-Lang, -Plat, -Org) %>%
+  rename(Lang = Lang_iconify, Plat = Plat_fa, Org = Org_icon)
 
 # Create GT table
 workshops_gt <- workshops %>%
@@ -120,13 +128,14 @@ workshops_gt <- workshops %>%
     Title = "Workshop Title",
     Lang = "Lang",
     Plat = "Plat",
+    Org = "Orga",
     Location = "Location",
     Duration = "Duration"
   ) %>%
 
-  # Reorder columns: Time, Title, Lang, Plat, Location, Duration
+  # Reorder columns: Time, Title, Lang, Plat, Org, Location, Duration
   cols_move(
-    columns = c(Lang, Plat),
+    columns = c(Lang, Plat, Org),
     after = Title
   ) %>%
 
@@ -136,6 +145,7 @@ workshops_gt <- workshops %>%
     Title ~ px(350),
     Lang ~ px(50),
     Plat ~ px(50),
+    Org ~ px(50),
     Location ~ px(280),
     Duration ~ px(90)
   ) %>%
@@ -147,7 +157,7 @@ workshops_gt <- workshops %>%
   ) %>%
   cols_align(
     align = "center",
-    columns = c(Lang, Plat, Duration)
+    columns = c(Lang, Plat, Org, Duration)
   ) %>%
 
   # Transform location column - replace zoom with local image
@@ -187,7 +197,7 @@ workshops_gt <- workshops %>%
   ) %>%
 
   # Enable HTML rendering for columns that need it
-  fmt_markdown(columns = c(Title, Lang, Plat, Location, Duration)) %>%
+  fmt_markdown(columns = c(Title, Lang, Plat, Org, Location, Duration)) %>%
 
   # Replace NA with empty string
   sub_missing(columns = everything(), missing_text = "") %>%
