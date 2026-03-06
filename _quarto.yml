@@ -13,9 +13,6 @@ website:
   site-url: "https://schmidtpaul.github.io/"
   favicon: "img/Banner/images/BioMathfavicon-32x32.png"
 
-execute:
-  freeze: auto
-
 format:
   html:
     theme: lumen
