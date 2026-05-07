@@ -57,6 +57,8 @@ cv <- readRDS(here("CV", "CV_ready.rds"))
 
 # Professional Experience
 
+My primary position is Data Scientist and General Manager at BioMath GmbH. Since April 2026 I additionally hold a 25 % position as research associate at the University of Hohenheim (Biostatistics Unit, Prof. Hans-Peter Piepho) within the DFG Research Unit FOR 6101 "MultiStress". I also teach statistics workshops on a freelance basis (see *Workshops* section).
+
 ```{r}
 #| output: asis
 cv_emit_experience("eng")

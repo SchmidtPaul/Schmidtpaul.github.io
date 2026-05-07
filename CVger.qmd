@@ -59,6 +59,8 @@ source(here::here("CV", "CVhelper-typst.R"))
 
 # Berufserfahrung
 
+Hauptberuflich bin ich als Data Scientist und Geschäftsführer bei der BioMath GmbH angestellt. Seit April 2026 arbeite ich zusätzlich mit einem Stellenanteil von 25 % als wissenschaftlicher Mitarbeiter an der Universität Hohenheim (FG Biostatistik, Prof. Hans-Peter Piepho) in der DFG-Forschungsgruppe FOR 6101 "MultiStress". Daneben bin ich freiberuflich als Workshopdozent tätig (siehe Abschnitt *Workshops*).
+
 ```{r}
 #| output: asis
 cv_emit_experience("ger")
