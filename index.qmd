@@ -43,14 +43,14 @@ pacman::p_load(kableExtra, formattable, here, htmltools, readxl, tidyverse)
 
 ### {{< iconify flag:us-4x3 >}} English
 
-I completed my PhD in biostatistics[^1] at the University of Hohenheim in 2019 and have since been working at [<img src="/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/> BioMath](https://www.biomath.de/), where I am now Managing Director. Over the past years, I have led numerous projects in statistics and data science for public institutions and private companies, developing R and Python workflows and creating Quarto-based reporting pipelines[^2]. Several of these projects have also resulted in publications[^3]. In addition, I serve as Deputy Speaker of the Working Group on Agricultural Experimentation[^4] of the German Region of the International Biometric Society and regularly teach R and Python workshops for beginners and advanced users (see table below).
+I completed my PhD in biostatistics[^1] at the University of Hohenheim in 2019 and have since been working at [<img src="/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/> BioMath](https://www.biomath.de/), where I am now Managing Director. Since April 2026, I additionally hold a part-time research position (25 %) at the University of Hohenheim (Biostatistics Unit, Prof. Hans-Peter Piepho) within the DFG research group [FOR 6101 "MultiStress"](https://multistress.uni-goettingen.de/members-multistress/). Over the past years, I have led numerous projects in statistics and data science for public institutions and private companies, developing R and Python workflows and creating Quarto-based reporting pipelines[^2]. Several of these projects have also resulted in publications[^3]. In addition, I serve as Deputy Speaker of the Working Group on Agricultural Experimentation[^4] of the German Region of the International Biometric Society and regularly teach R and Python workshops for beginners and advanced users (see table below).
 
 I like when complicated methods are explained well, when results are presented in a concise yet beautiful manner and when R does its magic.
 
 [^1]: Full text available [here](https://opus.uni-hohenheim.de/volltexte/2020/1720/)
 [^2]: Examples are available on my [GitHub](https://github.com/SchmidtPaul/).
 [^3]: A list of publications can be found on my [ResearchGate](https://www.researchgate.net/profile/Paul-Schmidt-16).
-[^4]: [More here](https://www.biometrische-gesellschaft.de/arbeitsgruppen/landwirtschaftliches-versuchswesen.html)
+[^4]: [More here](https://www.biometrische-gesellschaft.de/ag/landwirtschaftliches-versuchswesen.html)
 
 ::: {.cv-section}
 ### {{< fa file-pdf >}} Curriculum Vitae
@@ -60,14 +60,14 @@ I like when complicated methods are explained well, when results are presented i
 
 ### {{< iconify flag:de-4x3 >}} German
 
-Ich habe 2019 meine Promotion[^5] im Fachgebiet Biostatistik an der Universität Hohenheim abgeschlossen und bin seitdem bei [<img src="/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/> BioMath](https://www.biomath.de/) tätig, wo ich inzwischen als Geschäftsführer arbeite. In den vergangenen Jahren habe ich zahlreiche Projekte in Statistik und Data Science für öffentliche Institutionen und Unternehmen geleitet, R- und Python-Workflows entwickelt und Quarto-basierte Reporting-Pipelines aufgebaut[^6]. Mehrere dieser Projekte haben auch zu Publikationen geführt[^7]. Außerdem bin ich stellvertretender Sprecher der AG Landwirtschaftliches Versuchswesen[^8] der Deutschen Region der Internationalen Biometrischen Gesellschaft und gebe regelmäßig Workshops in R und Python für Einsteiger und Fortgeschrittene (siehe Tabelle unten).
+Ich habe 2019 meine Promotion[^5] im Fachgebiet Biostatistik an der Universität Hohenheim abgeschlossen und bin seitdem bei [<img src="/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/> BioMath](https://www.biomath.de/) tätig, wo ich inzwischen als Geschäftsführer arbeite. Seit April 2026 bin ich zusätzlich als wissenschaftlicher Mitarbeiter (25 %) an der Universität Hohenheim (FG Biostatistik, Prof. Hans-Peter Piepho) in der DFG-Forschungsgruppe [FOR 6101 "MultiStress"](https://multistress.uni-goettingen.de/members-multistress/) tätig. In den vergangenen Jahren habe ich zahlreiche Projekte in Statistik und Data Science für öffentliche Institutionen und Unternehmen geleitet, R- und Python-Workflows entwickelt und Quarto-basierte Reporting-Pipelines aufgebaut[^6]. Mehrere dieser Projekte haben auch zu Publikationen geführt[^7]. Außerdem bin ich stellvertretender Sprecher der AG Landwirtschaftliches Versuchswesen[^8] der Deutschen Region der Internationalen Biometrischen Gesellschaft und gebe regelmäßig Workshops in R und Python für Einsteiger und Fortgeschrittene (siehe Tabelle unten).
 
 Ich mag es, wenn komplizierte Methoden verständlich erklärt werden, wenn Ergebnisse prägnant und anschaulich präsentiert werden und wenn R seine Magie entfaltet.
 
 [^5]: [Volltext hier verfügbar](https://opus.uni-hohenheim.de/volltexte/2020/1720/)
 [^6]: Beispiele finden sich auf meinem [GitHub](https://github.com/SchmidtPaul/).
 [^7]: Eine Liste von Publikationen ist auf meinem [ResearchGate](https://www.researchgate.net/profile/Paul-Schmidt-16) verfügbar.
-[^8]: [Mehr hier](https://www.biometrische-gesellschaft.de/arbeitsgruppen/landwirtschaftliches-versuchswesen.html)
+[^8]: [Mehr hier](https://www.biometrische-gesellschaft.de/ag/landwirtschaftliches-versuchswesen.html)
 
 ::: {.cv-section}
 ### {{< fa file-pdf >}} Lebenslauf
@@ -79,13 +79,14 @@ Ich mag es, wenn komplizierte Methoden verständlich erklärt werden, wenn Ergeb
 
 ---
 
-## Projects
+## Affiliations & Projects
 
+- <img src="/img/Banner/images/BioMathfavicon-32x32.png" width=16 height=16/> [BioMath - Life Sciences Consulting](https://www.biomath.de/)
 - <img src="https://biomathcontent.netlify.app/img/logo/biomath_logo2025_green_512x512.png" width=16 height=16/> [BioMath Content - A knowledge hub for R, Python, and applied data science](https://biomathcontent.netlify.app/)
-- {{< fa chart-line >}} [Data Viz Showcase](https://github.com/SchmidtPaul/DataVizShowcase?tab=readme-ov-file#--data-viz-showcase)
 - <img src="https://raw.githubusercontent.com/SchmidtPaul/BioMathR/main/docs/favicon-32x32.png" width=16 height=16/> [BioMathR: Utility functions used at BioMath](https://schmidtpaul.github.io/BioMathR/)
-- <img src="https://raw.githubusercontent.com/SchmidtPaul/CitaviR/master/docs/favicon-32x32.png" width=16 height=16/> [CitaviR: A set of tools for dealing with Citavi data](https://schmidtpaul.github.io/CitaviR/)
-- <img src="https://raw.githubusercontent.com/SchmidtPaul/sankeyD3plus/main/docs/favicon-32x32.png" width=16 height=16/> [sankeyD3plus: D3 JavaScript Sankey diagrams in R](https://schmidtpaul.github.io/sankeyD3plus/)
+- {{< fa chart-line >}} [Data Viz Showcase](https://github.com/SchmidtPaul/DataVizShowcase?tab=readme-ov-file#--data-viz-showcase)
+- {{< fa flask >}} [DFG-Forschungsgruppe FOR 6101 "MultiStress"](https://multistress.uni-goettingen.de/members-multistress/)
+- {{< fa users >}} [AG Landwirtschaftliches Versuchswesen (Deutsche Region der IBS)](https://www.biometrische-gesellschaft.de/ag/landwirtschaftliches-versuchswesen.html)
 
 ---
 
