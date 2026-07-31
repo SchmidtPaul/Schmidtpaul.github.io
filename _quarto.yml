@@ -19,6 +19,7 @@ format:
     css: src/styles.css
     toc: false
     include-in-header: src/header.html
+    include-before-body: src/banner.html
     include-after-body: src/footer.html
     grid:
       body-width: 1200px

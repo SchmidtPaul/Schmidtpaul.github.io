@@ -39,6 +39,24 @@ a:link, a:visited, a:hover, a:active {
   color: #00923f;
 }
 
+/* Animated header banner (src/banner.html) */
+#headerbanner {
+  max-width: 900px;
+  margin: 0 auto;
+  grid-column: 1 / -1;   /* #quarto-content is a CSS grid - span all columns */
+  /* Quarto gives every direct child of #quarto-content padding-top: 14px */
+  padding-top: 0;
+}
+
+#headerbanner video,
+#headerbanner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Reserve the 3:1 box before the video loads - no layout jump */
+  aspect-ratio: 3 / 1;
+}
+
 /* About template width adjustments - From Quarto GitHub discussions */
 .about-contents {
   flex-grow: 3 !important;

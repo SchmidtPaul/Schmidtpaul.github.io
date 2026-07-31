@@ -1,0 +1,20 @@
+<!-- Animated header banner (source: C:\GitHub\stat_videos, web/banner_lm/banner_lm.py, scene BannerLM_Blass) -->
+<div id="headerbanner">
+<video autoplay muted loop playsinline preload="metadata"
+       poster="img/banner_lm/banner_lm_poster.png"
+       aria-label="Animation: a field trial is sorted by variety, turned into numbers, plotted against yield and summarised by a linear model with ANOVA table.">
+<source src="img/banner_lm/banner_lm.webm" type="video/webm">
+<source src="img/banner_lm/banner_lm.mp4" type="video/mp4">
+<img src="img/banner_lm/banner_lm_poster.png" alt="A field trial sorted by variety, plotted against yield and summarised by a linear model with ANOVA table.">
+</video>
+</div>
+<script>
+// include-before-body drops this inside the trestles content column. Lift it to the
+// top of #quarto-content so it spans the full width above photo and title. Runs during
+// parsing (before first paint), so there is no visible jump.
+(function () {
+  var b = document.getElementById("headerbanner");
+  var c = document.getElementById("quarto-content");
+  if (b && c && b.parentNode !== c) { c.insertBefore(b, c.firstChild); }
+})();
+</script>
