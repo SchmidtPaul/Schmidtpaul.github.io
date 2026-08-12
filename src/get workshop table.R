@@ -54,8 +54,8 @@ workshops <- workshops %>%
   mutate(
     # Transform language codes to flag images with tooltips
     Lang_iconify = case_when(
-      Lang == "Ger" ~ '<img src="img/flag_ger.png" title="German" style="width:22px; vertical-align: middle;">',
-      Lang == "Eng" ~ '<img src="img/flag_usa.png" title="English" style="width:22px; vertical-align: middle;">',
+      Lang == "Ger" ~ '<img src="img/icons/flag_ger.png" title="German" style="width:22px; vertical-align: middle;">',
+      Lang == "Eng" ~ '<img src="img/icons/flag_usa.png" title="English" style="width:22px; vertical-align: middle;">',
       TRUE ~ Lang
     ),
     # Transform platform codes to icons with tooltips and links
@@ -64,14 +64,14 @@ workshops <- workshops %>%
         '<a title="R" href="https://www.r-project.org/">{{< fa brands r-project size=xl >}}</a>',
       Plat == "Python" ~
         '<a title="Python" href="https://www.python.org/">{{< fa brands python size=xl >}}</a>',
-      Plat == "SAS" ~ '<a title="SAS" href="https://www.sas.com/"><img src="img/logo_sas.png" style="width:20px; height:20px; vertical-align: middle; filter: hue-rotate(-90deg);"></a>',
+      Plat == "SAS" ~ '<a title="SAS" href="https://www.sas.com/"><img src="img/icons/logo_sas.png" style="width:20px; height:20px; vertical-align: middle; filter: hue-rotate(-90deg);"></a>',
       TRUE ~ Plat
     ),
     # Transform org/firma to icon with tooltip and link
     Org_icon = case_when(
-      Org == "BioMath" ~ '<a title="BioMath" href="https://www.biomath.de/"><img src="img/logo_biomath.png" style="width:20px; height:20px; vertical-align: middle;"></a>',
-      Org == "Paul" ~ '<img src="img/logo_ps.svg" title="Freelance" style="width:24px; height:24px; vertical-align: middle;">',
-      Org == "Hohenheim" ~ '<a title="Uni Hohenheim" href="https://www.uni-hohenheim.de/"><img src="img/logo_hohenheim.svg" style="width:20px; height:20px; vertical-align: middle; "></a>',
+      Org == "BioMath" ~ '<a title="BioMath" href="https://www.biomath.de/"><img src="img/icons/logo_biomath.png" style="width:20px; height:20px; vertical-align: middle;"></a>',
+      Org == "Paul" ~ '<img src="img/icons/logo_ps.svg" title="Freelance" style="width:24px; height:24px; vertical-align: middle;">',
+      Org == "Hohenheim" ~ '<a title="Uni Hohenheim" href="https://www.uni-hohenheim.de/"><img src="img/icons/logo_hohenheim.svg" style="width:20px; height:20px; vertical-align: middle; "></a>',
       TRUE ~ Org
     ),
     # Store duration for bars
@@ -167,7 +167,7 @@ workshops_gt <- workshops %>%
       str_replace_all(
         x,
         "zoom",
-        '<img src="img/logo_zoom.png" style="width:30px; height:6px; vertical-align: middle;">'
+        '<img src="img/icons/logo_zoom.png" style="width:30px; height:6px; vertical-align: middle;">'
       )
     }
   ) %>%

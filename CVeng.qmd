@@ -18,6 +18,9 @@ author:
     - icon: fa brands github
       text: SchmidtPaul
       url: "https://github.com/SchmidtPaul/"
+    - icon: fa globe
+      text: schmidtpaul.github.io
+      url: "https://schmidtpaul.github.io/"
     - icon: fa pencil-square
       text: ResearchGate
       url: "https://www.researchgate.net/profile/Paul_Schmidt17"
@@ -64,6 +67,10 @@ My primary position is Data Scientist and General Manager at BioMath GmbH. Since
 cv_emit_experience("eng")
 ```
 
+```{=typst}
+#pagebreak(weak: true)
+```
+
 # Education
 
 ```{r}
@@ -76,6 +83,32 @@ cv_emit_education("eng")
 ```{r}
 #| output: asis
 cv_emit_skills("eng")
+```
+
+```{=typst}
+#pagebreak(weak: true)
+```
+
+# Favorite R Packages
+
+```{=typst}
+#import "@preview/fontawesome:0.5.0": *
+#let ic(n) = text(fill: rgb("#00923f"), size: 0.72em, baseline: -0.1em)[#fa-icon(n)]
+#let p(name, url) = link(url)[#name]
+
+#text(size: 0.8em, style: "italic")[
+  #ic("pen-nib") Author #h(0.7em) #ic("user-pen") Co-author #h(0.7em) #ic("code-pull-request") Contributor #h(0.7em) #ic("heart") heavy user
+]
+
+#v(0.35em)
+
+#text(weight: "bold")[Experimental design & field trials:] #p("desplot", "https://kwstat.github.io/desplot/") #ic("user-pen"), #p("FielDHub", "https://didiermurillof.github.io/FielDHub/") #ic("code-pull-request"), #p("agridat", "https://kwstat.github.io/agridat/") #ic("code-pull-request")
+
+#text(weight: "bold")[Mixed models & inference:] #p("lme4", "https://github.com/lme4/lme4") #ic("heart"), #p("glmmTMB", "https://glmmtmb.github.io/glmmTMB/") #ic("code-pull-request"), #p("emmeans", "https://rvlenth.github.io/emmeans/") #ic("code-pull-request"), #p("easystats", "https://easystats.github.io/easystats/") #ic("heart"), #p("heritable", "https://anu-aagi.github.io/heritable/") #ic("code-pull-request")
+
+#text(weight: "bold")[Reporting & reproducibility:] #p("quarto", "https://quarto.org/") #ic("heart"), #p("targets", "https://docs.ropensci.org/targets/") #ic("heart"), #p("openxlsx2", "https://janmarvin.github.io/openxlsx2/") #ic("code-pull-request"), #p("officer", "https://davidgohel.github.io/officer/") + #p("officedown", "https://davidgohel.github.io/officedown/") #ic("heart"), #p("excelcompare", "https://github.com/SchmidtPaul/excelcompare") #ic("pen-nib"), #p("BioMathR", "https://schmidtpaul.github.io/BioMathR/") #ic("pen-nib")
+
+#text(weight: "bold")[Data wrangling & visualization:] #p("tidyverse", "https://www.tidyverse.org/") #ic("heart"), #p("ggplot2", "https://ggplot2.tidyverse.org/") + #p("ggtext", "https://wilkelab.org/ggtext/") + #p("ggrepel", "https://ggrepel.slowkow.com/") + #p("patchwork", "https://patchwork.data-imaginist.com/") #ic("heart")
 ```
 
 # Workshops

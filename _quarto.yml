@@ -11,7 +11,7 @@ project:
 website:
   title: "Dr. Paul Schmidt"
   site-url: "https://schmidtpaul.github.io/"
-  favicon: "img/Banner/images/BioMathfavicon-32x32.png"
+  favicon: "img/icons/biomath_favicon.png"
 
 format:
   html:
