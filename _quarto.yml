@@ -7,6 +7,9 @@ project:
     - "CV/"
     - "src/"
     - "img/"
+    # Ohne diesen Ausschluss kopiert Quarto .claude/ (inkl. der Git-Worktrees von
+    # Claude-Code-Sessions, zweistellige MB) nach docs/ und damit potenziell online.
+    - "!.claude/"
 
 website:
   title: "Dr. Paul Schmidt"

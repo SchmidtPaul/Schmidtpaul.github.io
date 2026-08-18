@@ -11,3 +11,7 @@
 **/*.quarto_ipynb
 
 /.luarc.json
+
+# Claude Code (Worktrees, lokale Settings) - nie ins Repo und nie nach docs/
+.claude/
+tmp/
