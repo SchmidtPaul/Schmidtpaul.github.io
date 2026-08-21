@@ -117,9 +117,6 @@ for (LANG in langs) {
   )
 }
 
-# -------------------- Publications-Pfad --------------------
-cv$pub_path <- here("CV", "publications.bib")
-
 # -------------------- Workshops aus Google Sheets --------------------
 library(googlesheets4)
 
